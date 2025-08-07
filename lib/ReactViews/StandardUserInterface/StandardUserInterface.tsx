@@ -142,7 +142,6 @@ const StandardUserInterfaceBase: FC<StandardUserInterfaceProps> = observer(
       !props.viewState.storyBuilderShown;
     return (
       <>
-        v1
         <ContextProviders viewState={props.viewState} theme={mergedTheme}>
           <GlobalTerriaStyles />
           <TourPortal />

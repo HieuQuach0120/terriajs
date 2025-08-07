@@ -178,11 +178,12 @@ export default class Cesium extends GlobeOrMap {
     this.terriaViewer = terriaViewer;
     this.terria = terriaViewer.terria;
 
-    if (this.terria.configParameters.cesiumIonAccessToken !== undefined) {
-      Ion.defaultAccessToken =
-        this.terria.configParameters.cesiumIonAccessToken;
-    }
+    // if (this.terria.configParameters.cesiumIonAccessToken !== undefined) {
+    //   Ion.defaultAccessToken =
+    //     this.terria.configParameters.cesiumIonAccessToken;
+    // }
 
+    Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlOTJlN2ZkNS00ZTlkLTQ1MjQtYjgzZS1jMmVhYmU1ODhiM2MiLCJpZCI6MzE2MTI1LCJpYXQiOjE3NTI4MDU5ODR9.H67fxIDcOcPiJBFWfa-zfN2aNuJl89Uyf1Ysv1IdNwk'
     //An arbitrary base64 encoded image used to populate the placeholder SingleTileImageryProvider
     const img =
       "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA \
