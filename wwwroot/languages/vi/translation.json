@@ -1,5 +1,1834 @@
 {
   "general": {
-    "close": "Đóng"
+    "close": "Đóng",
+    "open": "Mở",
+    "prev": "Trước",
+    "next": "Tiếp",
+    "skip": "Bỏ qua",
+    "back": "Quay lại",
+    "delete": "Xóa",
+    "cancel": "Hủy",
+    "confirm": "Xác nhận"
+  },
+  "browsers": {
+    "chrome": "Google Chrome",
+    "firefox": "Mozilla Firefox",
+    "edge": "Microsoft Edge",
+    "safari": "Apple Safari"
+  },
+  "trainer": {
+    "expandTrainer": "Hiển thị chi tiết bước",
+    "collapseTrainer": "Ẩn chi tiết bước",
+    "showAllSteps": "Hiển thị tất cả các bước",
+    "hideAllSteps": "Ẩn tất cả các bước"
+  },
+  "tour": {
+    "preface": {
+      "title": "Tham quan",
+      "content": "Không chắc nên bắt đầu từ đâu? Tham gia chuyến tham quan nhanh các tính năng chính của phần mềm và tìm hiểu về một số chức năng quan trọng để giúp bạn bắt đầu.",
+      "close": "Có thể để sau",
+      "start": "Bắt đầu tham quan"
+    },
+    "finish": "Hoàn thành",
+    "locationSearchInput": {
+      "content": "## Tìm kiếm địa điểm\n\nNhập địa danh hoặc địa chỉ để dễ dàng định vị điểm quan tâm trên bản đồ."
+    },
+    "exploreMapDataButton": {
+      "content": "## Khám phá dữ liệu Digital Twin\n\nDuyệt qua Danh mục Dữ liệu Terria có sẵn và thêm vào digital twin tại đây. Bạn có thể thêm nhiều tập dữ liệu cùng lúc và xem chúng được liệt kê bên dưới trong bảng Digital Twin Data."
+    },
+    "sidePanelUploadButton": {
+      "content": "## Tải lên dữ liệu\n\nBạn có thể tải lên dữ liệu riêng để xem cùng các tập dữ liệu khác. Tải lên tệp hoặc liên kết đến tập dữ liệu trực tuyến hoặc dịch vụ dữ liệu hiện có. Định dạng hỗ trợ bao gồm CSV, GeoJSON, KML, GPX và CZML."
+    },
+    "menuBarMapSettingsButton": {
+      "content": "## Cài đặt bản đồ\n\nTùy chỉnh cài đặt bản đồ như bản đồ nền, Địa hình 2D/3D và chất lượng hình ảnh để cải thiện hiệu suất."
+    },
+    "menuBarStoryButton": {
+      "content": "## Câu chuyện\n\nCâu chuyện cho phép bạn thêm thông tin ngữ cảnh vào tập dữ liệu để làm sống động câu chuyện. Tạo câu chuyện dữ liệu riêng bằng Trình chỉnh sửa Câu chuyện và chia sẻ qua bảng 'Chia sẻ' khi hoàn thành."
+    },
+    "mapNavigationCompassOuterRing": {
+      "content": "## Điều khiển chế độ xem\n\nTại đây bạn có thể thay đổi chế độ xem bản đồ. Bạn có thể thay đổi hướng xem bằng vòng ngoài và nghiêng góc máy ảnh bằng vòng trong. Nhấp đúp để đặt lại chế độ xem."
+    },
+    "mapNavigationSplitterIcon": {
+      "content": "## So sánh\n\nMột tính năng mạnh mẽ của Terria là khả năng so sánh tập dữ liệu bằng chế độ xem chia đôi màn hình. Với tập dữ liệu có thành phần chuỗi thời gian như hình ảnh vệ tinh, bạn có thể so sánh ngày tháng qua thời gian bằng cách nhấp vào bộ chọn ngày."
+    }
+  },
+  "measure": {
+    "measureTool": "Công cụ đo",
+    "measureToolTitle": "Đo đường",
+    "measureDistance": "Đo khoảng cách giữa các vị trí"
+  },
+  "location": {
+    "errorGettingLocation": "Lỗi khi lấy vị trí",
+    "browserCannotProvide": "Trình duyệt không thể cung cấp vị trí của bạn.",
+    "myLocation": "Vị trí của tôi",
+    "location": "Vị trí",
+    "originError": "Trình duyệt chỉ cung cấp vị trí khi dùng HTTPS. Bạn có thể dùng {{secureUrl}} thay thế.",
+    "centreMap": "Đặt bản đồ tại vị trí hiện tại",
+    "permissionDenied": "Từ chối quyền truy cập vị trí. Vui lòng kiểm tra cài đặt trình duyệt.",
+    "positionUnavailable": "Thông tin vị trí không khả dụng.",
+    "timeout": "Lấy thông tin vị trí quá lâu. Vui lòng thử lại sau."
+  },
+  "splitterTool": {
+    "errorTitle": "Không thể so sánh mục danh mục.",
+    "duplicateModelErrorMessage": "Lỗi khi chia mục danh mục `\"{{name}}\"`. Mục này có thể không hỗ trợ tính năng \"so sánh\"",
+    "modelNotFoundErrorMessage": "Không tìm thấy ID mô hình `\"{{id}}\"`",
+    "toggleSplitterToolTitle": "So sánh",
+    "toggleSplitterTool": "Bật so sánh song song giữa hai bộ dữ liệu khác nhau",
+    "toggleSplitterToolDisabled": "Vui lòng tắt các tính năng so sánh song song khác để bật so sánh tiêu chuẩn",
+    "title": "Kéo trái/phải để điều chỉnh chế độ xem",
+    "workbench": {
+      "goleftTitle": "Hiển thị bên trái",
+      "goleft": "Trái",
+      "bothTitle": "Hiển thị cả hai bên",
+      "both": "Cả hai",
+      "gorightTitle": "Hiển thị bên phải",
+      "goright": "Phải",
+      "copyName": "{{name}} (bản sao)"
+    }
+  },
+  "zoomCotrol": {
+    "zoomIn": "Phóng to",
+    "zoomReset": "Đặt lại thu phóng",
+    "zoomOut": "Thu nhỏ"
+  },
+  "compass": {
+    "description": "Kéo vòng ngoài: xoay chế độ xem.\nKéo con quay hồi chuyển bên trong: quỹ đạo tự do.\nNhấp đúp: đặt lại chế độ xem.\nMẸO: Bạn cũng có thể quỹ đạo tự do bằng cách giữ phím CTRL và kéo bản đồ.",
+    "title": "Nhấp và kéo để xoay camera",
+    "guidanceBtnTitle": "Hướng dẫn con quay",
+    "guidanceBtnText": "Xem hướng dẫn chi tiết cách sử dụng la bàn",
+    "guidance": {
+      "title": "Điều khiển con quay",
+      "outerRingTitle": "Vòng ngoài",
+      "outerRingDescription": "Kéo vòng ngoài theo chuyển động tròn để xoay chế độ xem bản đồ 360˚.",
+      "innerCircleTitle": "Vòng trong",
+      "innerCircleDescription1": "Nhấp vào trung tâm và kéo chậm lên, xuống, trái hoặc phải để nghiêng và xoay bản đồ đồng thời.",
+      "innerCircleDescription2": "Nhấp đúp tại đây để đặt lại chế độ xem về trạng thái mặc định.",
+      "ctrlDragDescription": "Bạn cũng có thể nghiêng và xoay bản đồ bằng cách giữ phím CTRL và kéo bản đồ.",
+      "dismissText": "Đóng và không hiển thị lại"
+    }
+  },
+  "AR": {
+    "title": "Tính năng thử nghiệm: Thực tế tăng cường",
+    "experimentalFeatureMessage": "Chế độ Thực tế tăng cường hiện đang trong giai đoạn beta. Chế độ này chỉ được thiết kế để sử dụng trên các thiết bị di động cao cấp mới nhất. <br /><br />CẢNH BÁO: Chế độ này có thể tiêu thụ nhiều dữ liệu, hãy lưu ý về chi phí sử dụng dữ liệu từ nhà mạng. <br /><br />Độ chính xác của chế độ này phụ thuộc vào độ chính xác của la bàn nội bộ thiết bị.",
+    "confirmText": "Đã hiểu",
+    "manualAlignmentTitle": "Căn chỉnh thủ công",
+    "manualAlignmentMessage": "Căn chỉnh thiết bị di động sao cho khớp với căn chỉnh hiện tại của bản đồ, sau đó nhấp vào la bàn nhấp nháy. Nếu không có mốc nào để căn chỉnh hiển thị trên bản đồ, bạn có thể di chuyển bản đồ bằng các thao tác kéo và chụm cho đến khi thấy mốc nhận dạng được trước khi căn chỉnh thiết bị với bản đồ. <br /><div>{{img}}</div> <br />Mẹo: Mặt trời hoặc mặt trăng thường là mốc tốt để căn chỉnh nếu bạn ở nơi không quen thuộc (cẩn thận không nhìn trực tiếp vào mặt trời - có thể gây hại mắt).",
+    "resetAlignmentTitle": "Đặt lại căn chỉnh",
+    "resetAlignmentMessage": "Đang đặt lại căn chỉnh la bàn. Nếu căn chỉnh không khớp với thế giới thực, hãy thử vẫy thiết bị theo hình số 8 để hiệu chỉnh lại. Có thể thực hiện bất cứ lúc nào.<br /> <br />Tránh các vị trí có từ trường hoặc vật kim loại vì chúng có thể làm lệch la bàn thiết bị.",
+    "arTool": "công cụ thực tế tăng cường",
+    "btnHover": "chuyển đổi độ cao di chuột",
+    "btnRealign": "chuyển đổi căn chỉnh thủ công",
+    "btnResetRealign": "đặt lại căn chỉnh la bàn"
+  },
+  "tool": {
+    "closeButtonTitle": "Đóng công cụ {{toolName}}",
+    "loadingError": {
+      "title": "Lỗi tải công cụ {{toolName}}",
+      "message": "Lỗi xảy ra khi tải công cụ từ máy chủ. Vui lòng thử lại."
+    },
+    "exitBtnTitle": "Thoát",
+    "button": {
+      "open": "Thoát {{toolNameLowerCase}}",
+      "closed": "{{toolName}}"
+    }
+  },
+  "diffTool": {
+    "title": "Khác biệt",
+    "close": "Đóng",
+    "instructions": {
+      "setDateA": "Đặt ngày A",
+      "setDateB": "Đặt ngày B",
+      "changeDates": "Thay đổi ngày",
+      "paneDescription": "Trực quan hóa và so sánh sự khác biệt của dữ liệu giữa hai ngày tại một vị trí."
+    },
+    "choosePreview": "Chọn kiểu xem trước",
+    "chooseDifference": "Chọn kết quả khác biệt",
+    "differenceResultsTitle": "Kết quả phát hiện thay đổi",
+    "labels": {
+      "area": "Khu vực",
+      "dates": "Ngày tháng",
+      "dateComparisonA": "So sánh ngày A",
+      "dateComparisonB": "So sánh ngày B",
+      "sourceDataset": "Tập dữ liệu nguồn",
+      "previewStyle": "Kiểu xem trước",
+      "differenceOutput": "Kết quả khác biệt",
+      "generateDiffButtonText": "Tạo phát hiện thay đổi",
+      "disabledButtonPrompt": "Lưu ý: Phải chọn vị trí và ngày để tiếp tục phát hiện thay đổi",
+      "areaFilterSelection": "Lựa chọn bộ lọc khu vực",
+      "saveToWorkbench": "Lưu vào bàn làm việc"
+    },
+    "locationDisplay": {
+      "noLocationSelected": {
+        "title": "Chưa chọn vị trí!",
+        "description": "Để lọc bộ chọn ngày hình ảnh theo vị trí, hãy phóng to và chọn điểm quan tâm trên bản đồ"
+      },
+      "locationSelected": {
+        "title": "Đã chọn vị trí & ngày được lọc",
+        "description": "Để thay đổi, nhấp vào điểm khác trên bản đồ"
+      }
+    },
+    "locationPicker": {
+      "initialMessages": {
+        "title": "Chọn vị trí chính xác",
+        "beforePick": "Chúng tôi cần điều này để chạy quy trình phát hiện thay đổi.",
+        "afterPick": "Nhấp điểm khác để thay đổi khu vực chọn"
+      },
+      "nextMessages": {
+        "title": "Bạn đã chọn vị trí {{latitude}} {{longitude}}",
+        "beforePick": "Nhấp điểm khác để thay đổi lựa chọn",
+        "afterPick": "Nhấp điểm khác để thay đổi lựa chọn"
+      },
+      "errorMessages": {
+        "title": "Chọn vị trí chính xác",
+        "beforePick": "Không giải quyết được hình ảnh tại vị trí! Vui lòng chọn vị trí khác hoặc mức thu phóng.",
+        "afterPick": "Nhấp điểm khác để thay đổi lựa chọn"
+      }
+    },
+    "datePicker": {
+      "back": "Quay lại",
+      "previousDateTitle": "Ngày trước",
+      "nextDateTitle": "Ngày tiếp",
+      "dateButtonTitle": "Chọn ngày"
+    }
+  },
+  "legend": {
+    "lat": "Vĩ độ",
+    "lon": "Kinh độ",
+    "zone": "VÙNG",
+    "e": "Đ",
+    "n": "B",
+    "elev": "Cao độ"
+  },
+  "languagePanel": {
+    "changeLanguage": "Thay đổi ngôn ngữ"
+  },
+  "share": {
+    "browserPrint": "Để kết quả in tốt hơn, vui lòng dùng nút In của {{appName}} thay vì tính năng in của trình duyệt.",
+    "shortLinkShortening": "Đang rút gọn...",
+    "shortLinkError": "Lỗi khi rút gọn URL. Vui lòng kiểm tra kết nối internet và thử lại.",
+    "localDataNote": "<0><0>Lưu ý:</0></0><1>Các nguồn dữ liệu sau sẽ KHÔNG được chia sẻ vì chúng bao gồm dữ liệu từ hệ thống cục bộ hoặc dịch vụ trực tuyến đã xác thực. Để chia sẻ, hãy xuất bản dữ liệu trên máy chủ web và <2>thêm chúng bằng url</2>.</1>",
+    "generatingUrl": "Đang tạo URL chia sẻ...",
+    "printTitle": "In bản đồ",
+    "printExplanation": "Mở phiên bản có thể in của bản đồ này.",
+    "downloadMap": "Tải bản đồ (png)",
+    "printViewButton": "Hiển thị chế độ xem in",
+    "btnAdvanced": "Tùy chọn nâng cao",
+    "embedTitle": "Nhúng bản đồ",
+    "embedDescription": "Để nhúng, sao chép mã này vào trang HTML:",
+    "shortenUsingService": "Rút gọn URL chia sẻ bằng dịch vụ web",
+    "btnCatalogShareText": "Chia sẻ",
+    "btnStoryShareText": "Chia sẻ",
+    "btnMapShareText": "Chia sẻ / In",
+    "btnCatalogShareTitle": "Chia sẻ danh mục của bạn",
+    "btnStoryShareTitle": "Chia sẻ câu chuyện của bạn",
+    "btnMapShareTitle": "Chia sẻ bản đồ của bạn",
+    "convertNotificationTitle": "Thông báo: liên kết chia sẻ đã nâng cấp",
+    "convertNotificationMessage": "Liên kết này dựa trên phiên bản cũ của TerriaJS - phần mềm chạy bản đồ web này. Mặc dù đã nỗ lực bảo tồn liên kết, bạn có thể gặp sự cố khi trực quan hóa dữ liệu.  \n\nNếu bạn là người dùng liên kết chia sẻ, nhấn OK để tắt cảnh báo và tiếp tục truy cập dữ liệu.",
+    "convertNotificationHelp": "Nếu bạn tạo liên kết chia sẻ, hãy kiểm tra menu Trợ giúp để biết mẹo cập nhật liên kết.",
+    "convertNotificationFeedback": "Để đặt câu hỏi hoặc phản hồi, nhấp vào đây.",
+    "convertNotificationWarningsTitle": "Chi tiết kỹ thuật",
+    "convertErrorTitle": "Không thể nâng cấp liên kết chia sẻ lên V8",
+    "convertErrorMessage": "Liên kết này dựa trên phiên bản cũ của TerriaJS. Đã xảy ra lỗi khi nâng cấp dữ liệu chia sẻ.",
+    "getShareSaveHelpMessage": "Cách đánh dấu Sharelinks"
+  },
+  "countDatasets": {
+    "btnText": "Bắt đầu",
+    "loadError": "tải thất bại.",
+    "countingMessage": "Đang đếm, vui lòng chờ...",
+    "totals": "<div>Danh mục chứa {{items}} mục trong {{groups}} nhóm.</div>",
+    "subTotals": "<div> {{name}}: {{items}} mục / {{groups}} nhóm</div>",
+    "recount": "Đếm lại",
+    "title": "Đếm tập dữ liệu",
+    "btnCount": "Đếm tập dữ liệu",
+    "noMapDataEnabled": "Không có dữ liệu bản đồ được bật",
+    "mapDataState": "{{count}} tập dữ liệu được bật trên bản đồ",
+    "mapDataState_plural": "{{count}} tập dữ liệu được bật trên bản đồ"
+  },
+  "toolsPanel": {
+    "btnText": "Công cụ",
+    "btnTitle": "Hộp công cụ nâng cao"
+  },
+  "settingPanel": {
+    "viewerModeLabels": {
+      "CesiumTerrain": "Địa hình 3D",
+      "CesiumEllipsoid": "Mượt 3D",
+      "Leaflet": "2D"
+    },
+    "qualityLabels": {
+      "maximumPerformance": "Hiệu suất tối đa, chất lượng thấp hơn",
+      "balancedPerformance": "Cân bằng hiệu suất & chất lượng",
+      "lowerPerformance": "Chất lượng tối đa, hiệu suất thấp hơn"
+    },
+    "nativeResolutionLabel": "Nhấn để ngừng dùng độ phân giải {{resolution1}} và bắt đầu dùng {{resolution2}}",
+    "native": "gốc",
+    "screen": "màn hình",
+    "btnTitle": "Thay đổi chế độ xem",
+    "btnText": "Cài đặt bản đồ",
+    "mapView": "Chế độ xem bản đồ",
+    "baseMap": "Bản đồ nền",
+    "imageOptimisation": "Tối ưu hóa hình ảnh",
+    "nativeResolutionHeader": "Dùng độ phân giải thiết bị gốc",
+    "mapQuality": "Chất lượng bản đồ:",
+    "qualityLabel": "Chất lượng",
+    "performanceLabel": "Hiệu suất",
+    "timeline": {
+      "title": "Dòng thời gian",
+      "alwaysShowLabel": "Nhấn để chỉ hiển thị dòng thời gian khi có tập dữ liệu biến đổi theo thời gian trên bàn làm việc",
+      "hideLabel": "Nhấn để luôn hiển thị dòng thời gian, ngay cả khi không có tập dữ liệu biến đổi theo thời gian trên bàn làm việc",
+      "alwaysShow": "Luôn hiển thị"
+    },
+    "terrain": {
+      "hideUnderground": "Địa hình ẩn các đối tượng dưới lòng đất",
+      "showUndergroundFeatures": "Nhấn để hiển thị các đối tượng dưới bề mặt địa hình",
+      "hideUndergroundFeatures": "Nhấn để ẩn các đối tượng dưới bề mặt địa hình",
+      "sideLabel": "Hiển thị địa hình ở",
+      "left": "Trái",
+      "both": "Cả hai",
+      "right": "Phải"
+    }
+  },
+  "feedback": {
+    "feedbackPreamble": "Chúng tôi mong muốn nhận phản hồi từ bạn!",
+    "title": "Phản hồi",
+    "close": "đóng phản hồi",
+    "yourName": "Tên bạn (tùy chọn)",
+    "email": "Địa chỉ email (tùy chọn)<br/><em>Chúng tôi không thể theo dõi nếu không có!</em>",
+    "commentQuestion": "Bình luận hoặc câu hỏi",
+    "shareWithDevelopers": "Chia sẻ chế độ xem bản đồ của tôi với nhà phát triển {{appName}}",
+    "cancel": "Hủy",
+    "sending": "Đang gửi...",
+    "send": "Gửi",
+    "feedbackBtnText": "Gửi phản hồi",
+    "minLength": "Độ dài tối thiểu của bình luận phản hồi là {{minLength}}"
+  },
+  "helpPanel": {
+    "btnText": "Trợ giúp",
+    "menuPaneTitle": "Chúng tôi ở đây để giúp",
+    "menuPaneBody": "Tìm mẹo hữu ích về cách sử dụng TerriaJS bằng cách kiểm tra hướng dẫn bên dưới hoặc liên hệ nhóm tại [{{supportEmail}}]({{supportEmail}})",
+    "promptMessage": "Tìm Tour, video hướng dẫn & nội dung trợ giúp khác tại đây",
+    "dismissText": "Đã hiểu, cảm ơn!",
+    "takeTour": "Tham quan",
+    "mapUserGuide": "Hướng dẫn sử dụng bản đồ"
+  },
+  "sui": {
+    "notifications": {
+      "title": "Bản đồ này chứa một câu chuyện",
+      "message": "Bạn có muốn xem ngay bây giờ?",
+      "confirmText": "Có",
+      "denyText": "Có thể để sau"
+    },
+    "showWorkbench": "Khám phá tập dữ liệu [{{count}}]",
+    "hideWorkbench": "Ẩn bàn làm việc"
+  },
+  "featureInfo": {
+    "catalogItem": {
+      "moreThanMax": "Đã tìm thấy hơn {{maximum}} đối tượng {{catalogItemName}}.",
+      "featuresFound": "Đã tìm thấy {{featCount}} đối tượng {{catalogItemName}}.",
+      "featureInfoShown": "{{maximum}} đầu tiên được hiển thị bên dưới."
+    },
+    "download": "Tải bảng này",
+    "pickLocation": "Chọn vị trí",
+    "clickMap": "Nhấp vào bản đồ để tìm hiểu thêm về vị trí",
+    "noDataAvailable": "Không có dữ liệu tại đây - thử vị trí khác.",
+    "clickToAddData": "Nhấp '$t(addData.addDataBtnText)' để thêm dữ liệu vào bản đồ.",
+    "userSelection": "Lựa chọn người dùng",
+    "panelHeading": "Thông tin đối tượng",
+    "btnCloseFeature": "Đóng bảng dữ liệu",
+    "satelliteSuggestionBtn": "Hiển thị {{catalogItemName}} tại vị trí này",
+    "locationMarker": "Điểm đánh dấu vị trí",
+    "noInfoAvailable": "Không có thông tin",
+    "siteData": "Dữ liệu trang",
+    "latLon": "Vĩ độ / Kinh độ ",
+    "showRawData": "Hiển thị dữ liệu thô",
+    "showCuratedData": "Hiển thị dữ liệu được quản lý"
+  },
+  "welcomeMessage": {
+    "title": "Hãy bắt đầu",
+    "welcomeMessage": "Quan tâm đến khám phá và khai thác dữ liệu?<br/>Hãy bắt đầu ngay hoặc kiểm tra các tùy chọn hướng dẫn trợ giúp sau.",
+    "welcomeMessageOnMobile": "Quan tâm đến khám phá và khai thác dữ liệu?",
+    "tourBtnText": "Tham quan",
+    "helpBtnText": "Tôi cần trợ giúp",
+    "exploreDataBtnText": "Khám phá dữ liệu bản đồ",
+    "searchBtnText": "Tìm kiếm vị trí",
+    "dismissText": "Đóng thông báo và không hiển thị lại"
+  },
+  "story": {
+    "panelTitle": "Trình chỉnh sửa câu chuyện",
+    "panelBody": "Tạo và chia sẻ câu chuyện tương tác trực tiếp từ bản đồ của bạn.",
+    "panelBodyCapped": "Mỗi câu chuyện bị giới hạn ở {{ shareMaxRequestSize }} - chia nhỏ dữ liệu lớn hoặc nhiều cảnh thành nhiều câu chuyện để duy trì dưới giới hạn.",
+    "gettingStarted": "Bắt đầu",
+    "gettingStartedTitle": "Bắt đầu",
+    "badgeBarLabel": "Cảnh",
+    "share": "Chia sẻ",
+    "viewStory": "xem",
+    "view": "Xem",
+    "editStory": "chỉnh sửa",
+    "edit": "Chỉnh sửa",
+    "expand": "Mở rộng",
+    "collapse": "Thu gọn",
+    "recaptureStory": "chụp lại",
+    "recapture": "Chụp lại",
+    "deleteStory": "xóa",
+    "delete": "Xóa",
+    "untitledScene": "cảnh chưa đặt tên",
+    "doesNotExist": "Câu chuyện không tồn tại",
+    "removeAllStories": "Xóa tất cả",
+    "removeAllStoriesDialog": "Bạn có chắc muốn xóa {{ count }} cảnh?",
+    "removeAllStoriesDialog_plural": "Bạn có chắc muốn xóa {{ count }} cảnh?",
+    "removeStoryDialog": "Bạn có chắc muốn xóa '<1>{{storyName}}</1>'?",
+    "preview": "xem trước câu chuyện",
+    "play": "Phát",
+    "playStory": "Câu chuyện",
+    "captureSceneTitle": "chụp cảnh hiện tại",
+    "captureScene": "Chụp cảnh",
+    "editor": {
+      "modalHeader": "Trình chỉnh sửa câu chuyện - Chụp cảnh",
+      "titleLabel": "Tiêu đề (bắt buộc)",
+      "descriptionLabel": "Mô tả",
+      "placeholder": "Nhập tiêu đề tại đây",
+      "cancelBtn": "hủy",
+      "cancelEditing": "Hủy",
+      "saveBtn": "lưu",
+      "saveStory": "Lưu"
+    },
+    "locationBtn": "căn giữa cảnh",
+    "exitBtn": "thoát câu chuyện",
+    "previousBtn": "đi đến cảnh trước",
+    "prev": "Trước",
+    "untitled": "cảnh chưa đặt tên",
+    "navBtn": "đi đến câu chuyện {{title}}",
+    "nextBtn": "đi đến cảnh tiếp",
+    "next": "Tiếp",
+    "restart": "Khởi động lại",
+    "navBtnMobile": "đi đến câu chuyện {{title}}",
+    "promptHtml1": "<0>Bạn có thể xem và tạo câu chuyện bất cứ lúc nào bằng cách nhấp vào đây.</0>",
+    "promptHtml2": "<0><0>GIỚI THIỆU</0><1>Câu chuyện dữ liệu</1><2>Tạo và chia sẻ câu chuyện tương tác trực tiếp từ bản đồ của bạn.</2></0>",
+    "story": "Câu chuyện",
+    "dismissText": "Đã hiểu, cảm ơn!",
+    "mobileViewStory": "Xem câu chuyện {{storiesLength}}",
+    "storyEditor": "Trình chỉnh sửa câu chuyện",
+    "storiesTooLong": "Câu chuyện này vượt quá kích thước tối đa cho phép. Hãy thử giảm số tập dữ liệu hiển thị hoặc chụp ít cảnh hơn.",
+    "hideStoryPanel": "ẩn trình tạo câu chuyện",
+    "loadSceneErrorTitle": "Lỗi tải cảnh câu chuyện",
+    "loadSceneErrorMessage": "Lỗi xảy ra khi tải dữ liệu cho cảnh câu chuyện: `{{title}}`."
+  },
+  "satelliteGuidance": {
+    "menuTitle": "Bạn có thể truy cập hướng dẫn bản đồ bất cứ lúc nào bằng cách xem trong <2>menu trợ giúp</2>.",
+    "dismissText": "Đã hiểu, cảm ơn!",
+    "titleI": "Hình ảnh vệ tinh: Làm thế nào để...?",
+    "bodyI": "Hướng dẫn siêu nhanh để tận dụng tối đa hình ảnh vệ tinh lịch sử.",
+    "prevI": "Không, cảm ơn",
+    "nextI": "Xem hướng dẫn",
+    "titleII": "Hình ảnh vệ tinh của tôi ở đâu?",
+    "bodyII": "Bạn có thể cần điều chỉnh mức thu phóng để hình ảnh vệ tinh hiển thị trên bản đồ.",
+    "titleIII": "Tải hình ảnh lịch sử",
+    "bodyIII": "Trong bàn làm việc dữ liệu, nhấp vào menu thả xuống ngày chụp và chọn từ các mốc thời gian có sẵn để tải hình ảnh lịch sử.",
+    "titleIV": "Lọc hình ảnh theo vị trí",
+    "bodyIV": "Hình ảnh vệ tinh có thể không luôn có sẵn vào thời điểm và vị trí bạn muốn. Nếu bạn chỉ muốn xem hình ảnh cho một vị trí cụ thể, hãy nhấp ‘lọc theo vị trí’ trong bàn làm việc dữ liệu.",
+    "titleV": "Làm thế nào để xem hình ảnh màu giả?",
+    "bodyV": "Bạn có thể áp dụng nhiều kiểu, chẳng hạn như màu giả, cho hình ảnh vệ tinh bằng cách nhấp vào menu thả xuống kiểu trong bàn làm việc dữ liệu."
+  },
+  "addData": {
+    "addDataBtnText": "Khám phá dữ liệu",
+    "btnHide": "Ẩn",
+    "load": "Tải dữ liệu cục bộ/web",
+    "closeDataPanel": "Đóng bảng dữ liệu",
+    "done": "Hoàn thành",
+    "data": "Dữ liệu",
+    "myData": "Dữ liệu của tôi",
+    "modalTitle": "Khám phá dữ liệu",
+    "dataCatalogue": "Danh mục dữ liệu",
+    "searchPlaceholderWhole": "Tìm kiếm toàn bộ danh mục",
+    "searchPlaceholder": "Tìm kiếm danh mục",
+    "localAdd": "Thêm tệp cục bộ",
+    "localFileType": "<0>Bước 1:</0> Chọn loại tệp",
+    "localFile": "<0>Bước 2:</0> Chọn tệp",
+    "webAdd": "Thêm dữ liệu web",
+    "webFileType": "<0>Bước 1:</0> Chọn loại tệp hoặc dịch vụ web",
+    "webFile": "<0>Bước 2:</0> Nhập URL của tệp dữ liệu hoặc dịch vụ web",
+    "urlInputBtn": "Thêm",
+    "browse": "Duyệt...",
+    "localTitle": "Thêm dữ liệu cục bộ",
+    "webTitle": "Thêm dữ liệu web",
+    "dragDrop": "Kéo và thả",
+    "infoText": "<0>Kéo và thả tệp vào đây để xem cục bộ trên bản đồ</0><1>(nó sẽ không được lưu hoặc tải lên internet)</1>",
+    "back": "Quay lại",
+    "note": "<0>Lưu ý: </0>Dữ liệu được thêm theo cách này không được lưu hoặc hiển thị cho người khác."
+  },
+  "search": {
+    "resultsLabel": "Kết quả tìm kiếm",
+    "done": "Hoàn thành",
+    "data": "Dữ liệu",
+    "searchInDataCatalog": "Tìm kiếm '{{locationSearchText}}' trong Danh mục dữ liệu",
+    "search": "Tìm kiếm '{{searchText}}' trong Danh mục dữ liệu",
+    "viewLess": "Xem ít kết quả {{name}} hơn",
+    "viewMore": "Xem thêm kết quả {{name}}",
+    "placeholder": "Tìm kiếm vị trí",
+    "searchCatalogue": "Tìm kiếm danh mục"
+  },
+  "mobile": {
+    "toggleNavigation": "chuyển đổi điều hướng",
+    "addDataBtnText": "Dữ liệu",
+    "doneBtnText": "Hoàn thành"
+  },
+  "preview": {
+    "doesNotContainGeospatialData": "Tệp này không chứa dữ liệu địa không gian.",
+    "selectToPreviewDataset": "Chọn tập dữ liệu để xem trước",
+    "selectMultipleDatasets": "<0>Nhấn <strong>Shift</strong> và nhấp</0><1 /><2>để thêm nhiều tập dữ liệu</2>",
+    "selectToPreviewSeparator": "HOẶC",
+    "goToTheMap": "Đi đến bản đồ",
+    "loading": "ĐANG TẢI XEM TRƯỚC...",
+    "preview": "Xem trước {{appName}}",
+    "previewItemErrorTitle": "Không thể xem trước mục danh mục.",
+    "previewItemErrorMessage": "Lỗi xảy ra khi tải mục danh mục.",
+    "noPreviewAvailable": "KHÔNG CÓ XEM TRƯỚC",
+    "dataPreviewLoading": "ĐANG TẢI XEM TRƯỚC DỮ LIỆU...",
+    "dataPreview": "XEM TRƯỚC DỮ LIỆU",
+    "dataPreviewError": "LỖI XEM TRƯỚC DỮ LIỆU",
+    "removeFromMap": "Xóa khỏi bản đồ",
+    "addToMap": "Thêm vào bản đồ",
+    "disclaimer": "Tuyên bố miễn trừ",
+    "dataDescription": "Mô tả dữ liệu",
+    "datasetDescription": "Mô tả tập dữ liệu",
+    "serviceDescription": "Mô tả dịch vụ",
+    "resourceDescription": "Mô tả tài nguyên",
+    "licence": "Giấy phép",
+    "accessConstraints": "Hạn chế truy cập",
+    "fees": "Phí",
+    "author": "Tác giả",
+    "contact": "Liên hệ",
+    "created": "Đã tạo",
+    "modified": "Đã sửa đổi",
+    "updateFrequency": "Tần suất cập nhật",
+    "dataCustodian": "Người quản lý dữ liệu",
+    "mayBeExperiencingIssues": "Tập dữ liệu này có thể đang gặp sự cố"
+  },
+  "description": {
+    "name": "Mô tả",
+    "dataLocal": "Tệp này chỉ tồn tại trong trình duyệt của bạn. Để chia sẻ, bạn phải tải nó lên máy chủ web công cộng.",
+    "dataNotLocal": "Vui lòng liên hệ với nhà cung cấp dữ liệu để biết thêm thông tin, bao gồm quyền sử dụng và hạn chế.",
+    "wms": "Đây là dịch vụ <1>WMS</1>, tạo hình ảnh bản đồ theo yêu cầu. Có thể dùng trong phần mềm GIS với URL này:",
+    "wfs": "Đây là dịch vụ <1>WFS</1>, truyền dữ liệu không gian thô theo yêu cầu. Có thể dùng trong phần mềm GIS với URL này:",
+    "layerName": "Tên lớp",
+    "typeName": "Tên loại",
+    "metadataUrls": "Liên kết siêu dữ liệu",
+    "dataUrl": "Liên kết dữ liệu",
+    "useLinkBelow": "Dùng liên kết bên dưới để tải dữ liệu. Xem {{link}} để biết thêm thông tin về tùy chỉnh tham số URL.",
+    "downloadInFormat": "Tải dữ liệu đã chọn ở định dạng {{format}}",
+    "downloadNotSupported": "Rất tiếc, trình duyệt của bạn không hỗ trợ chức năng tải dữ liệu này dưới dạng tệp. Vui lòng dùng $t(browsers.chrome), $t(browsers.firefox), $t(browsers.edge) hoặc $t(browsers.safari) để tải dữ liệu này.",
+    "useTheLinkToDownload": "Dùng liên kết bên dưới để tải dữ liệu trực tiếp.",
+    "downloadData": "Tải dữ liệu",
+    "dataSourceDetails": "Chi tiết nguồn dữ liệu",
+    "dataServiceDetails": "Chi tiết dịch vụ dữ liệu",
+    "dataCustodian": "Người quản lý dữ liệu"
+  },
+  "workbench": {
+    "colorScaleRangeTitle": "Dải màu không hợp lệ",
+    "colorScaleRangeMin": "Giá trị tối thiểu phải là số.",
+    "colorScaleRangeMax": "Giá trị tối đa phải là số.",
+    "colorScaleRangeMinSmallerThanMax": "Giá trị tối thiểu của dải màu phải nhỏ hơn giá trị tối đa.",
+    "colorScaleRange": "Dải màu",
+    "rangeMax": "Tối đa:",
+    "rangeMin": "Tối thiểu:",
+    "colorScaleUpdateRange": "Cập nhật dải",
+    "displayPercent": "Hiển thị dưới dạng phần trăm của tổng khu vực",
+    "opacity": "Độ mờ: {{opacity}} %",
+    "zoomToTitle": "Thu phóng đến phạm vi",
+    "zoomTo": "Thu phóng lý tưởng",
+    "openFeatureTitle": "Thu phóng đến dữ liệu",
+    "openFeature": "Thu phóng đến",
+    "previewItemTitle": "Về dữ liệu này",
+    "showMoreActionsTitle": "Hiển thị thêm hành động",
+    "previewItem": "Về dữ liệu",
+    "splitItemTitle": "Nhân bản và hiển thị bộ chia",
+    "splitItem": "So sánh",
+    "diffImageTitle": "Xem sự khác biệt hình ảnh giữa hai ngày",
+    "diffImage": "Khác biệt",
+    "exportDataTitle": "Xuất dữ liệu bản đồ",
+    "exportData": "Xuất",
+    "removeFromMapTitle": "Xóa dữ liệu này",
+    "removeFromMap": "Xóa",
+    "label": "Tập dữ liệu",
+    "removeAll": "Xóa tất cả",
+    "collapseAll": "Thu gọn tất cả",
+    "expandAll": "Mở rộng tất cả",
+    "disableAll": "Tắt tất cả",
+    "enableAll": "Bật tất cả",
+    "toggleVisibility": "Hiển thị/ẩn dữ liệu",
+    "addItemErrorTitle": "Không thể thêm mục danh mục vào bàn làm việc.",
+    "addItemErrorMessage": "Lỗi xảy ra khi tải mục danh mục.",
+    "searchItem": "Tìm kiếm",
+    "searchItemTitle": "Tìm kiếm",
+    "splitScreenMode": "CHẾ ĐỘ MÀN HÌNH CHIA ĐÔI"
+  },
+  "dateTime": {
+    "selectorLabel": "Thời gian:",
+    "back": "Quay lại",
+    "previous": "Thời gian trước",
+    "selectTime": "Chọn thời gian",
+    "outOfRange": "Hiện nằm ngoài phạm vi.",
+    "next": "Thời gian tiếp",
+    "useTimeline": "Dùng dòng thời gian",
+    "availableTimeChart": "Hiển thị thời gian có sẵn trên biểu đồ",
+    "timeline": {
+      "textCell": "Tên tập dữ liệu có phạm vi thời gian được hiển thị",
+      "gotoStart": "Đến đầu",
+      "togglePlay": "Phát",
+      "playSlower": "Phát chậm hơn",
+      "playFaster": "Phát nhanh hơn"
+    }
+  },
+  "satellite": {
+    "pickPoint": "Chọn điểm bằng cách nhấp vào bản đồ.",
+    "querying": "Đang truy vấn vị trí...",
+    "filterByLocation": "Lọc theo vị trí",
+    "infoGroup": "Chỉ hiển thị thời gian chụp có sẵn cho:",
+    "removeFilter": "Xóa bộ lọc",
+    "zoomTo": "Thu phóng đến",
+    "newLocation": "Vị trí mới"
+  },
+  "timer": {
+    "nextScheduledUpdateTime": "Cập nhật dữ liệu tiếp theo lúc {{scheduledUpdateTime}}",
+    "nextScheduledUpdateCountdown": "Cập nhật dữ liệu tiếp theo sau {{timeCountdown}}"
+  },
+  "concept": {
+    "active": {
+      "edit": "Chỉnh sửa điều kiện",
+      "remove": "Xóa điều kiện"
+    },
+    "inactive": {
+      "cancel": "Hủy",
+      "newText": "Điều kiện mới"
+    },
+    "summary": {
+      "addMoreText": "Thêm điều kiện",
+      "addFirstText": "Thêm điều kiện mới"
+    }
+  },
+  "clipboard": {
+    "success": "Đã sao chép vào bảng nhớ tạm",
+    "unsuccessful": "Sao chép không thành công...",
+    "shareURL": "Chia sẻ URL",
+    "shareExplanation": "Bất kỳ ai có URL này sẽ có thể truy cập bản đồ này.",
+    "copy": "Sao chép"
+  },
+  "includeStory": {
+    "message": "Bao gồm Câu chuyện trong Chia sẻ"
+  },
+  "dragDrop": {
+    "text": "<0>Kéo & Thả</0><1>Dữ liệu của bạn ở bất cứ đâu để xem trên bản đồ<1>",
+    "notification": "<0>\"{{fileNames}}\"</0> đã được thêm vào <4>Dữ liệu của tôi</4>.",
+    "notification_plural": "<0>\"{{fileNames}}\"</0> đã được thêm vào <4>Dữ liệu của tôi</4>."
+  },
+  "loader": {
+    "loadingMessage": "Đang tải"
+  },
+  "emptyWorkbenchInfo": [
+    {
+      "heading": "Thêm tập dữ liệu tại đây",
+      "body": "Khi bạn thêm tập dữ liệu, chú giải và cài đặt của nó sẽ xuất hiện tại đây."
+    },
+    {
+      "heading": "Bắt đầu",
+      "list": [
+        "Nhấp Khám phá dữ liệu để xem tập dữ liệu có sẵn",
+        "Tải lên dữ liệu riêng qua Tải lên dữ liệu",
+        "Tìm dữ liệu đã thêm trong bảng này"
+      ]
+    },
+    {
+      "heading": "Bạn có thể làm gì",
+      "list": [
+        "Hiển thị hoặc ẩn dữ liệu",
+        "Điều chỉnh độ mờ",
+        "So sánh song song",
+        "Thay đổi kiểu (màu sắc, đường, ký hiệu)",
+        "Xem ngày giờ khác nhau (nếu được hỗ trợ)"
+      ]
+    },
+    {
+      "body": "Dùng bảng này để khám phá dữ liệu, quản lý cài đặt và xây dựng cảnh bản đồ hoặc câu chuyện của bạn."
+    }
+  ],
+  "dataCatalog": {
+    "groupRemove": "xóa nhóm này",
+    "groupEmpty": "Nhóm này trống"
+  },
+  "catalogItem": {
+    "privateIndicatorTitle": "Tập dữ liệu riêng tư",
+    "loading": "Đang tải...",
+    "remove": "Xóa",
+    "add": "Thêm",
+    "trash": "Xóa khỏi danh mục",
+    "removeFromMap": "Xóa khỏi bản đồ",
+    "preview": "Xem trước"
+  },
+  "chart": {
+    "sectionLabel": "Biểu đồ",
+    "closePanel": "Đóng bảng",
+    "expand": "Mở rộng",
+    "download": "Tải xuống",
+    "showItemInChart": "Hiển thị {{value}} trong biểu đồ",
+    "loading": "Đang tải dữ liệu biểu đồ...",
+    "noData": "Không tìm thấy dữ liệu biểu đồ."
+  },
+  "viewModels": {
+    "searchNoLocations": "Xin lỗi, không có vị trí phù hợp với truy vấn tìm kiếm của bạn.",
+    "searchErrorOccurred": "Lỗi xảy ra khi tìm kiếm. Vui lòng kiểm tra kết nối internet hoặc thử lại sau.",
+    "searchMinCharacters": "Bạn cần nhập tối thiểu {{count}} ký tự",
+    "searchMinCharacters_plural": "Bạn cần nhập tối thiểu {{count}} ký tự",
+    "searchAddresses": "Địa chỉ",
+    "searchPlaceNames": "Tên địa điểm chính thức",
+    "searchNoPlaceNames": "Xin lỗi, không có tên địa điểm chính thức nào phù hợp với truy vấn tìm kiếm của bạn.",
+    "searchLocations": "Vị trí",
+    "searchCatalogueItem": "Mục danh mục",
+    "searchNoCatalogueItem": "Xin lỗi, không có mục danh mục nào phù hợp với truy vấn tìm kiếm của bạn.",
+    "inMultipleLocations": "Trong nhiều vị trí bao gồm: ",
+    "inDataCatalogue": "Trong Danh mục dữ liệu"
+  },
+  "terriaViewer": {
+    "slowWebGLAvailableTitle": "Hiệu suất WebGL kém",
+    "slowWebGLAvailableMessage": "Trình duyệt báo cáo sự cố hiệu suất khi hiển thị {{appName}} ở 3D, vì vậy bạn sẽ chỉ thấy trải nghiệm 2D hạn chế. Để có trải nghiệm 3D đầy đủ, hãy thử dùng trình duyệt khác, nâng cấp trình điều khiển video hoặc hệ điều hành.",
+    "slowWebGLAvailableMessageII": "{{appName}} hoạt động tốt nhất với trình duyệt hỗ trợ {{webGL}} bao gồm các phiên bản mới nhất của $t(browsers.chrome), $t(browsers.firefox), $t(browsers.edge) và $t(browsers.safari). Trình duyệt của bạn dường như không hỗ trợ WebGL, vì vậy bạn sẽ chỉ thấy trải nghiệm 2D hạn chế.",
+    "webGLNotSupportedTitle": "WebGL không được hỗ trợ",
+    "webGLNotSupportedOrSlowTitle": "WebGL không được hỗ trợ hoặc quá chậm",
+    "webGLNotSupportedOrSlowMessage": "Trình duyệt không thể hiển thị bản đồ 3D, do không hỗ trợ WebGL hoặc trình duyệt báo cáo WebGL sẽ rất chậm. Vui lòng thử trình duyệt khác như phiên bản mới nhất của $t(browsers.chrome), $t(browsers.firefox), $t(browsers.edge) hoặc $t(browsers.safari). Trong một số trường hợp, bạn có thể cần nâng cấp trình điều khiển video hoặc hệ điều hành để có chế độ xem 3D trong {{appName}}."
+  },
+  "analytics": {
+    "selectLocation": "Chọn vị trí",
+    "point": "Điểm (vĩ/kinh)",
+    "polygon": "Đa giác",
+    "existingPolygon": "Đa giác hiện có",
+    "nothingSelected": "Chưa chọn gì, vui lòng dùng nút trên để chọn.",
+    "runAnalysis": "Chạy phân tích",
+    "clickToDrawLine": "Nhấp để vẽ đường",
+    "enterValidCoords": "Vui lòng nhập tọa độ hợp lệ (vd: 131.0361, -25.3450).",
+    "selectPoint": "Chọn điểm bằng cách nhấp vào bản đồ.",
+    "clickToDrawPolygon": "Nhấp để vẽ đa giác",
+    "shiftToDrawRectangle": "Nhấn phím SHIFT và giữ nút chuột trái để vẽ hình chữ nhật",
+    "clickToDrawRectangle": "Nhấp để vẽ hình chữ nhật",
+    "selectedPolygon": "Đa giác đã chọn",
+    "regionName": "Tên khu vực",
+    "selectExistingPolygon": "Chọn đa giác hiện có"
+  },
+  "core": {
+    "errors": {
+      "tooDeepAddedByUser": "Đạt 100 mục danh mục khi kiểm tra addedByUser và landing trên ID: \"{{memberId}}\"? Kiểm tra xem bạn có nhóm danh mục đệ quy không."
+    },
+    "userAddedData": "Dữ liệu người dùng thêm",
+    "chartData": "Dữ liệu biểu đồ",
+    "dataUri": {
+      "errorTitle": "Trình duyệt không hỗ trợ tải dữ liệu",
+      "errorMessage": "Rất tiếc, trình duyệt Microsoft (bao gồm mọi phiên bản Internet Explorer và Edge) không hỗ trợ chức năng data uri cần thiết để tải dữ liệu dưới dạng tệp. Để tải, hãy sao chép uri sau vào trình duyệt khác như $t(browsers.chrome), $t(browsers.firefox) hoặc $t(browsers.safari): {{href}}"
+    },
+    "dataType": {
+      "auto": "Loại tệp",
+      "wms-group": "Máy chủ Web Map Service (WMS)",
+      "wmts-group": "Máy chủ Web Map Tile Service (WMTS)",
+      "wfs-group": "Máy chủ Web Feature Service (WFS)",
+      "wps-getCapabilities": "Máy chủ Web Processing Service (WPS)",
+      "esri-group": "Máy chủ Esri ArcGIS",
+      "esri-mapServer": "Esri ArcGIS MapServer (một lớp)",
+      "esri-imageServer": "Esri ArcGIS ImageServer (một lớp)",
+      "esri-featureServer": "Esri ArcGIS FeatureServer (một lớp)",
+      "3d-tiles": "3D Tiles",
+      "open-street-map": "Máy chủ Open Street Map",
+      "sdmx-group": "SDMX-JSON",
+      "opendatasoft-group": "Cổng Opendatasoft",
+      "geojson": "GeoJSON",
+      "geoRss": "GeoRSS",
+      "kml": "KML hoặc KMZ",
+      "csv": "CSV",
+      "czml": "CZML",
+      "gpx": "GPX",
+      "json": "Danh mục Terria",
+      "carto": "Carto V1",
+      "carto-v3": "Carto V3",
+      "gltf": "glTF",
+      "shp": "Shapefile",
+      "socrata-group": "Máy chủ Socrata",
+      "assimp-local": "Bộ chuyển đổi tệp 3D (zip) (thử nghiệm)",
+      "assimp-local-description": "**Cảnh báo:** Bộ chuyển đổi tệp 3D đang thử nghiệm.  \nXem danh sách [định dạng hỗ trợ](https://github.com/assimp/assimp/blob/master/doc/Fileformats.md).  \nTệp phải được nén zip.",
+      "assimp-remote": "Bộ chuyển đổi tệp 3D (thử nghiệm)",
+      "assimp-remote-description": "**Cảnh báo:** Bộ chuyển đổi tệp 3D đang thử nghiệm.  \nXem danh sách [định dạng hỗ trợ](https://github.com/assimp/assimp/blob/master/doc/Fileformats.md).  \nCũng hỗ trợ tệp zip",
+      "ifc": "IFC",
+      "cog": "Cloud Optimised Geotiff",
+      "i3s": "I3S",
+      "cesium-ion": "Cesium ion"
+    },
+    "printWindow": {
+      "errorTitle": "Lỗi in",
+      "errorMessage": "In không bắt đầu trong 10 giây. Có thể trình duyệt này không hỗ trợ in?",
+      "printMediaStart": "bắt đầu phương tiện in",
+      "printMediaEnd": "kết thúc phương tiện in",
+      "onbeforeprint": "trước khi in",
+      "onafterprint": "sau khi in"
+    },
+    "consoleAnalytics": {
+      "started": "ConsoleAnalytics đã bắt đầu.",
+      "startedNoenableConsoleAnalytics": "ConsoleAnalytics đã bắt đầu, tuy nhiên `configParameters.enableConsoleAnalytics` không được xác định hoặc đặt là false.",
+      "logStartedWithGAParameters": "ConsoleAnalytics đã bắt đầu nhưng khóa `googleAnalyticsKey` hoặc `googleAnalyticsOptions` được quan sát thấy trên `configParameters`"
+    },
+    "googleAnalytics": {
+      "log": "Theo dõi Google Analytics bị tắt vì terria.configParameters.googleAnalyticsKey không được chỉ định",
+      "logEnabledOnDevelopment": "Google Analytics đã được khởi tạo trong môi trường `development`"
+    },
+    "readText": {
+      "fileRequired": "tệp là bắt buộc"
+    },
+    "readXml": {
+      "xmlError": "Tệp không chứa XML hợp lệ."
+    },
+    "serverConfig": {
+      "failedToGet": "Không thể lấy cấu hình máy chủ từ {{serverConfigUrl}}. Điều này có nghĩa là các dịch vụ như proxy, convert và rút gọn URL có thể không hoạt động."
+    },
+    "terriaError": {
+      "defaultTitle": "Đã xảy ra lỗi",
+      "defaultMessage": "Lỗi không xác định",
+      "defaultCombineTitle": "Nhiều lỗi đã xảy ra",
+      "defaultCombineMessage": "Chi tiết lỗi được hiển thị bên dưới",
+      "networkRequestTitle": "Lỗi yêu cầu mạng",
+      "networkRequestMessage": "Dữ liệu có thể không khả dụng hoặc hiển thị không chính xác do sự cố dịch vụ của người quản lý dữ liệu. Vui lòng thử tải lại bản đồ, truy cập dữ liệu sau hoặc chọn tập dữ liệu khác. <feedbacklink feedback-message='Nếu sự cố vẫn tiếp diễn, vui lòng gửi phản hồi tại đây.' email-message='Nếu sự cố vẫn tiếp diễn, vui lòng báo cáo cho {{email}}'/>",
+      "networkRequestMessageDetailed": "Điều này có thể chỉ ra một trong những điều sau:\n\n* Không thể phân giải tên máy chủ\n* Máy chủ không phản hồi yêu cầu - hoặc tạm thời không khả dụng\n* Máy chủ từ chối quyền truy cập [Chia sẻ tài nguyên đa nguồn gốc (CORS)](https://docs.terria.io/guide/connecting-to-data/cross-origin-resource-sharing/) vào URL này\n* Có vấn đề với kết nối internet của bạn\n\nNếu bạn nhập liên kết thủ công, vui lòng xác minh rằng liên kết chính xác."
+    },
+    "unverifiedExternalLink": {
+      "title": "Cảnh báo: liên kết chưa xác minh",
+      "message": "Bạn sắp mở: \n\n`{{url}}`  \n\nLiên kết này chưa được xác minh và có thể không an toàn.",
+      "denyText": "Hủy",
+      "confirmText": "Mở trong tab mới"
+    }
+  },
+  "map": {
+    "addressGeocoder": {
+      "devError": "bulkConvertAddresses phải được triển khai trong lớp dẫn xuất."
+    },
+    "cesium": {
+      "stoppedRenderingTitle": "Bản đồ 3D không hiển thị",
+      "stoppedRenderingMessage": "Điều này có thể do tập dữ liệu vừa thêm vào bàn làm việc - vui lòng thử xóa nó. Nếu không giải quyết được, bạn có thể cần tải lại {{appName}}.",
+      "devError": "cesium là bắt buộc.",
+      "failedToObtain": "Không thể lấy hình ảnh X: {{x}} Y: {{y}} Mức: {{level}}.",
+      "notWebMercatorTilingScheme": "Tập dữ liệu này không thể hiển thị trên bản đồ 2D vì nó không hỗ trợ phép chiếu Web Mercator (EPSG:3857).",
+      "unusalTilingScheme": "Tập dữ liệu này không thể hiển thị trên bản đồ 2D vì nó sử dụng sơ đồ lát gạch không thông dụng.",
+      "terrainServerErrorTitle": "Máy chủ địa hình không phản hồi",
+      "terrainServerErrorMessage": " Máy chủ địa hình hiện không phản hồi. Bạn vẫn có thể sử dụng mọi tính năng của {{appName}} nhưng sẽ không có chi tiết địa hình trong chế độ 3D. Chúng tôi xin lỗi vì sự bất tiện này. Vui lòng thử lại sau và máy chủ địa hình sẽ phản hồi như bình thường. Nếu sự cố vẫn tiếp diễn, vui lòng liên hệ qua email tại {{supportEmail}}."
+    },
+    "computeRingWindingOrder": {
+      "devError": "Dự kiến các điểm kiểu {x:number, y:number}"
+    },
+    "displayVariablesConcept": {
+      "defaultName": "Hiển thị biến"
+    },
+    "drawExtentHelper": {
+      "drawExtent": "Vẽ phạm vi",
+      "extent": "Phạm vi"
+    },
+    "gmlToGeoJson": {
+      "missingPos": "Phần tử điểm GML thiếu phần tử pos.",
+      "missingExteriorRing": "Đa giác GML thiếu vòng ngoài.",
+      "missingPosList": "Vòng ngoài của đa giác GML thiếu posList.",
+      "containsUnsupportedFeatureType": "GML chứa loại đối tượng không được hỗ trợ: {{type}}"
+    },
+    "geoRssToGeoJson": {
+      "containsUnsupportedFeatureType": "GeoRSS chứa loại đối tượng không được hỗ trợ: {{type}}"
+    },
+    "w3cToGeoJson": {
+      "containsUnsupportedFeatureType": "GeoRSS với hình học W3C chứa loại đối tượng không được hỗ trợ: {{type}}"
+    },
+    "gnafAddressGeocoder": {
+      "noAddresses": "Cấu trúc bảng này không có địa chỉ!",
+      "noAddresses2": "Mặc dù cấu trúc bảng báo cáo có cột địa chỉ, nhưng nó không có địa chỉ",
+      "suburb": "Ngoại ô",
+      "state": "Bang",
+      "postcode": "Mã bưu điện",
+      "matchedAddresses": "Địa chỉ khớp",
+      "lon": "Kinh độ",
+      "lat": "Vĩ độ",
+      "score": "Điểm",
+      "poBox": "hòm thư",
+      "postOfficeBox": "hòm thư bưu điện"
+    },
+    "imageryProviderHooks": {
+      "devError": "Không có ngữ cảnh để tô màu lại hình ảnh."
+    },
+    "mapboxVectorTileImageryProvider": {
+      "requireLayerName": "MapboxVectorTileImageryProvider yêu cầu tên lớp được truyền dưới dạng options.layerName",
+      "requireStyles": "MapboxVectorTileImageryProvider yêu cầu hàm tạo kiểu được truyền dưới dạng options.styleFunc",
+      "moreThanFourTiles": "Hình chữ nhật và minLevel của nhà cung cấp hình ảnh chỉ ra rằng có {{tileCount}} gạch ở minLevel. Các nhà cung cấp hình ảnh có hơn bốn gạch ở minLevel không được hỗ trợ.",
+      "maxLevelError": "Mức tối đa quá cao cho bộ dữ liệu"
+    },
+    "regionProvider": {
+      "csvRegionMappingTitle": "Ánh xạ khu vực CSV",
+      "csvRegionMappingMessageZeroFound": "Không tìm thấy tên khu vực nào cho loại khu vực {{regionType}}",
+      "csvRegionMappingMessageZeroBoundariesFound": "Không tìm thấy ranh giới khu vực nào cho khu vực {{regionName}}",
+      "csvRegionMappingMessageLoadError": "Không thể tải ranh giới khu vực cho khu vực {{regionName}} {{exception}}"
+    },
+    "extraCreditLinks": {
+      "dataAttribution": "Ghi công dữ liệu",
+      "termsOfUse": "Điều khoản sử dụng",
+      "credits": "Ghi công",
+      "mapCredits": "Ghi công bản đồ",
+      "dataProvider": "Dữ liệu được cung cấp bởi:",
+      "searchProvider": "Tìm kiếm được cung cấp bởi:"
+    }
+  },
+  "models": {
+    "userData": {
+      "addingDataErrorTitle": "Không thể thêm dữ liệu",
+      "addingDataErrorMessage": "Dữ liệu được chỉ định không thể thêm vì không hợp lệ hoặc không đúng định dạng.",
+      "fileApiNotSupportedTitle": "API tệp không được hỗ trợ",
+      "fileApiNotSupportedMessage": "Rất tiếc, trình duyệt của bạn không hỗ trợ API tệp mà {{appName}} yêu cầu để thêm dữ liệu từ tệp trên hệ thống của bạn. Vui lòng nâng cấp trình duyệt. Để có trải nghiệm tốt nhất, chúng tôi khuyên dùng phiên bản mới nhất của {{chrome}}, {{firefox}} hoặc {{edge}}."
+    },
+    "arcGisService": {
+      "name": "Nhóm dịch vụ ArcGIS",
+      "invalidServerTitle": "Máy chủ ArcGIS không hợp lệ",
+      "invalidServerMessage": "Lỗi xảy ra khi gọi dịch vụ REST ArcGIS. Phản hồi của máy chủ dường như không phải là tài liệu REST ArcGIS hợp lệ.",
+      "groupNotAvailableTitle": "Nhóm không khả dụng",
+      "groupNotAvailableMessage": "Lỗi xảy ra khi gọi dịch vụ REST ArcGIS."
+    },
+    "arcGisFeatureServer": {
+      "name": "Máy chủ tính năng ArcGIS",
+      "nameGroup": "Nhóm máy chủ tính năng ArcGIS",
+      "invalidServiceTitle": "Dịch vụ tính năng ArcGIS không hợp lệ",
+      "invalidServiceMessage": "Lỗi xảy ra khi gọi dịch vụ tính năng ArcGIS. Phản hồi của máy chủ dường như không phải là tài liệu dịch vụ tính năng hợp lệ.",
+      "groupNotAvailableTitle": "Nhóm không khả dụng",
+      "groupNotAvailableMessage": "Lỗi xảy ra khi gọi dịch vụ tính năng ArcGIS."
+    },
+    "arcGisFeatureServerCatalogGroup": {
+      "name": "Nhóm máy chủ tính năng ArcGIS",
+      "dataDescription": "Mô tả dữ liệu",
+      "serviceDescription": "Mô tả dịch vụ",
+      "copyrightText": "Văn bản bản quyền",
+      "invalidServiceTitle": "Dịch vụ tính năng ArcGIS không hợp lệ",
+      "invalidServiceMessage": "Lỗi xảy ra khi gọi dịch vụ tính năng ArcGIS. Phản hồi của máy chủ dường như không phải là tài liệu dịch vụ tính năng hợp lệ.",
+      "groupNotAvailableTitle": "Nhóm không khả dụng",
+      "groupNotAvailableMessage": "Lỗi xảy ra khi gọi dịch vụ tính năng ArcGIS."
+    },
+    "arcGisFeatureServerCatalogItem": {
+      "name": "Esri ArcGIS FeatureServer",
+      "dataDescription": "Mô tả dữ liệu",
+      "serviceDescription": "Mô tả dịch vụ",
+      "copyrightText": "Văn bản bản quyền",
+      "missingUrlTitle": "Không thể tải FeatureServer",
+      "missingUrlMessage": "Không thể tải điểm cuối ArcGis FeatureServer vì mục danh mục không có `url`.",
+      "invalidServiceTitle": "Lớp dịch vụ tính năng ArcGIS không hợp lệ",
+      "invalidServiceMessage": "Lỗi xảy ra khi gọi dịch vụ tính năng ArcGIS. Phản hồi của máy chủ dường như không phải là lớp dịch vụ tính năng hợp lệ.",
+      "reachedMaxFeatureLimit": "Cảnh báo: Lớp này đã đạt giới hạn tính năng của FeatureService ({{maxFeatures}})."
+    },
+    "arcGisMapServerCatalogGroup": {
+      "name": "Nhóm máy chủ bản đồ ArcGIS",
+      "dataDescription": "Mô tả dữ liệu",
+      "serviceDescription": "Mô tả dịch vụ",
+      "copyrightText": "Văn bản bản quyền",
+      "invalidServiceTitle": "Dịch vụ bản đồ ArcGIS không hợp lệ",
+      "invalidServiceMessage": "Lỗi xảy ra khi gọi dịch vụ bản đồ ArcGIS. Phản hồi của máy chủ dường như không phải là tài liệu dịch vụ bản đồ hợp lệ.",
+      "groupNotAvailableTitle": "Nhóm không khả dụng",
+      "groupNotAvailableMessage": "Lỗi xảy ra khi gọi dịch vụ bản đồ ArcGIS.",
+      "singleFusedMapCacheLayerName": "Tất cả các lớp"
+    },
+    "arcGisMapServerCatalogItem": {
+      "name": "Esri ArcGIS MapServer",
+      "dataDescription": "Mô tả dữ liệu",
+      "serviceDescription": "Mô tả dịch vụ",
+      "copyrightText": "Văn bản bản quyền",
+      "invalidUrlTitle": "Không thể tải MapServer",
+      "invalidUrlMessage": "Không thể tải điểm cuối ArcGis MapServer vì mục danh mục không có `url`.",
+      "noLayersFoundTitle": "Không thể tải ArcGIS MapServer.",
+      "noLayersFoundMessage": "Esri ArcGIS MapServer '{{name}}' không có lớp nào để hiển thị."
+    },
+    "arcGisImageServerCatalogItem": {
+      "name": "Esri ArcGIS ImageServer",
+      "invalidUrlTitle": "Không thể tải ImageServer",
+      "invalidUrlMessage": "Không thể tải điểm cuối ArcGis ImageServer vì mục danh mục không có `url`.",
+      "invalidServiceTitle": "Dịch vụ hình ảnh ArcGIS không hợp lệ",
+      "invalidServiceMessage": "Lỗi xảy ra khi gọi dịch vụ hình ảnh ArcGIS. Phản hồi của máy chủ dường như không phải là tài liệu dịch vụ hình ảnh hợp lệ.",
+      "rasterFunction": "Hàm raster"
+    },
+    "bing": {
+      "name": "Bing Maps"
+    },
+    "wcs": {
+      "asyncResultLoadingMetadata": "WCS đang tải:\n{{name}} dịch vụ tại {{timestamp}}.\n\n*Đang tải siêu dữ liệu (`DescribeCoverage`)*",
+      "asyncResultDescription": "Đây là kết quả của việc xuất dữ liệu từ {{name}} dịch vụ tại {{timestamp}} với các tham số đầu vào bên dưới.",
+      "asyncPendingDescription": "WCS đang tải:\n{{name}} dịch vụ tại {{timestamp}}.\n\n*Đang tải coverage*",
+      "exportFailedTitle": "Xuất dữ liệu thất bại",
+      "exportFailedMessage": "Dịch vụ Web Coverage không thành công",
+      "exportFailedMessageII": "Dịch vụ Web Coverage không thành công: {{error}}"
+    },
+    "cartoMap": {
+      "name": "Bản đồ Carto",
+      "noUrlTitle": "Không có URL",
+      "noUrlMessage": "Không thể tìm thấy URL có thể sử dụng cho lớp bản đồ Carto."
+    },
+    "cesiumTerrain": {
+      "name": "Địa hình Cesium",
+      "name3D": "Cesium 3D Tiles",
+      "notSupportedErrorTitle": "Không hỗ trợ trong 2D",
+      "notSupportedErrorMessage": "\"{{name}}\" không thể hiển thị trong chế độ xem 2D. Chuyển sang 3D nếu được hỗ trợ trên hệ thống của bạn, cập nhật tập dữ liệu để hỗ trợ phép chiếu hoặc dùng tập dữ liệu khác.",
+      "errorRenderingTitle": "Lỗi hiển thị trong 3D",
+      "errorRenderingMessage": "Lỗi xảy ra khi hiển thị trong 3D. Điều này có thể chỉ ra lỗi trong {{appName}} hoặc không tương thích với hệ thống hoặc trình duyệt. Chúng tôi sẽ chuyển bạn sang 2D để bạn có thể tiếp tục công việc."
+    },
+    "ckan": {
+      "nameServer": "Máy chủ CKAN",
+      "errorLoadingTitle": "Lỗi tải danh mục CKAN",
+      "errorLoadingMessage": "Định nghĩa cho danh mục CKAN này không có truy vấn bộ lọc hợp lệ.",
+      "corsErrorMessage": "Không thể truy xuất gói từ máy chủ CKAN này.",
+      "name": "Tài nguyên CKAN",
+      "dataSourceErrorMessage": "Nguồn dữ liệu này không có chi tiết nào.",
+      "serviceErrorMessage": "Dịch vụ này không có chi tiết nào.",
+      "datasetDescription": "Mô tả tập dữ liệu",
+      "dataDescription": "Mô tả dữ liệu",
+      "resourceDescription": "Mô tả tài nguyên",
+      "datasetCustodian": "Người quản lý tập dữ liệu",
+      "licence": "Giấy phép",
+      "author": "Tác giả",
+      "contact_point": "Liên hệ",
+      "metadata_created": "Đã tạo",
+      "metadata_modified": "Đã sửa đổi",
+      "update_freq": "Tần suất cập nhật",
+      "idsNotSpecifiedTitle": "Phải chỉ định resourceId hoặc datasetId",
+      "idsNotSpecifiedMessage": "CkanCatalogItem yêu cầu chỉ định resourceId hoặc datasetId.",
+      "errorRetrievingUrlTitle": "Lỗi truy xuất URL CKAN",
+      "errorRetrievingUrlMessage": "Không thể truy xuất URL dưới dạng JSON: {{url}}.",
+      "invalidCkanTitle": "JSON tài nguyên CKAN không hợp lệ",
+      "invalidCkanMessage": "Tài nguyên trả về từ máy chủ CKAN dường như không có package_id.",
+      "notCompatibleTitle": "Không tìm thấy tài nguyên tương thích",
+      "notCompatibleMessageI": "Tập dữ liệu CKAN không có tài nguyên với ID {{resourceId}} hoặc nó không có định dạng được hỗ trợ.",
+      "notCompatibleMessageII": "Tập dữ liệu CKAN không có bất kỳ tài nguyên nào với định dạng được hỗ trợ."
+    },
+    "arcgisPortal": {
+      "nameGroup": "Nhóm cổng ArcGIS",
+      "errorLoadingTitle": "Lỗi tải danh mục cổng ArcGIS",
+      "errorLoadingMessage": "Định nghĩa cho danh mục cổng ArcGIS này không có truy vấn bộ lọc hợp lệ.",
+      "corsErrorMessage": "Không thể truy xuất gói từ máy chủ cổng ArcGIS này. ",
+      "name": "Mục cổng ArcGIS",
+      "dataSourceErrorMessage": "Nguồn dữ liệu này không có chi tiết nào.",
+      "serviceErrorMessage": "Dịch vụ này không có chi tiết nào.",
+      "datasetDescription": "Mô tả tập dữ liệu",
+      "licence": "Giấy phép",
+      "openInPortal": "Mở trong cổng ArcGIS",
+      "idsNotSpecifiedTitle": "Phải chỉ định resourceId hoặc datasetId",
+      "idsNotSpecifiedMessage": "Mục cổng ArcGIS yêu cầu chỉ định itemId.",
+      "errorRetrievingUrlTitle": "Lỗi truy xuất URL cổng ArcGIS",
+      "errorRetrievingUrlMessage": "Không thể truy xuất URL dưới dạng JSON: {{url}}."
+    },
+    "catalog": {
+      "name": "Mục chưa đặt tên",
+      "group": "Nhóm",
+      "idForMatchingErrorTitle": "Thiếu thuộc tính",
+      "idForMatchingErrorMessage": "Đối tượng mô hình phải có thuộc tính `id`, `localId` hoặc `name`.",
+      "catalogMemberMustHaveName": "Thành viên danh mục mới tạo phải có tên.",
+      "catalogMemberMustHaveType": "Thành viên danh mục phải có loại.",
+      "userAddedDataGroup": "Nhóm cho dữ liệu được thêm bởi người dùng qua bảng Thêm dữ liệu.",
+      "chartDataGroup": "Nhóm cho dữ liệu biểu đồ.",
+      "dataSourceErrorMessage": "Nguồn dữ liệu này không có chi tiết nào.",
+      "serviceErrorMessage": "Dịch vụ này không có chi tiết nào.",
+      "stubCreationFailure": "Không thể tạo stub cho mục danh mục {{item}}",
+      "unsupportedTypeTitle": "Loại không xác định",
+      "unsupportedTypeMessage": "Không thể tạo loại mô hình không xác định {{type}}.",
+      "unsupportedFileTypeTitle": "Loại tệp không được hỗ trợ",
+      "unsupportedFileTypeMessage": "Định dạng tệp này không được {{appName}} hỗ trợ. Định dạng hỗ trợ bao gồm: <ul><li>.geojson</li><li>.kml, .kmz</li><li>.csv (trong {{link}})</li><li>Shapefile (.zip)</li></ul>",
+      "upload": "Tải lên dữ liệu",
+      "mustHaveType": "Mỗi mục phải có loại.",
+      "compositesError": "Composite không thể bao gồm các mục composite.",
+      "convertErrorTitle": "Không thể nâng cấp danh mục lên V8",
+      "convertErrorMessage": "Tệp danh mục này dựa trên phiên bản cũ của TerriaJS - phần mềm chạy bản đồ web này. Đã xảy ra lỗi khi nâng cấp dữ liệu danh mục cho {{url}}.",
+      "addAll": "Thêm tất cả",
+      "removeAll": "Xóa tất cả"
+    },
+    "createParameter": {
+      "unsupportedErrorTitle": "Loại tham số hàm không được hỗ trợ",
+      "unsupportedErrorMessage": "Loại tham số hàm không xác định: {{type}}."
+    },
+    "csv": {
+      "name": "Giá trị được phân tách bằng dấu phẩy (CSV)",
+      "dataSourceErrorMessage": "Nguồn dữ liệu này không có chi tiết nào.",
+      "serviceErrorMessage": "Dịch vụ này không có chi tiết nào.",
+      "unexpectedTypeTitle": "Loại dữ liệu CSV không mong đợi",
+      "unexpectedTypeMessage": "Dữ liệu CsvCatalogItem dự kiến là Blob, File hoặc String, nhưng nó không phải bất kỳ loại nào trong số này.",
+      "unableToLoadTitle": "Không thể tải tệp CSV",
+      "unableToLoadMessage": "Xem thông số kỹ thuật <a href=\"https://github.com/TerriaJS/nationalmap/wiki/csv-geo-au\">csv-geo-au</a> để biết định dạng CSV được hỗ trợ.\n\n {{message}}",
+      "unableToLoadItemTitle": "Không có CSV",
+      "unableToLoadItemMessage": "Mục danh mục CSV không thể tải vì nó không được cấu hình với thuộc tính `url` hoặc `csvString`."
+    },
+    "csw": {
+      "name": "Dịch vụ danh mục (CSW)",
+      "unknownError": "Máy chủ CSW báo cáo lỗi không xác định.",
+      "exceptionMessage": "Máy chủ CSW báo cáo lỗi:\n\n {{exceptionText}}",
+      "errorLoadingTitle": "Không thể tải CSW",
+      "notUseableTitle": "Dịch vụ danh mục không thể sử dụng.  \n\n {{message}}",
+      "notUseableMessage": "Phản hồi không hợp lệ khi gọi GetDomain trên máy chủ CSW.",
+      "errorLoadingRecordsTitle": "Không tải được bản ghi CSW.",
+      "errorLoadingRecordsMessage": "Phản hồi không hợp lệ khi gọi GetRecords trên CSW",
+      "checkCORSDomain": "Không thể thực thi GetDomain trên máy chủ CSW này.",
+      "checkCORSRecords": "Không thể thực thi GetRecords trên máy chủ CSW này.",
+      "dataResponsibility": "Trách nhiệm dữ liệu",
+      "links": "Liên kết",
+      "metadataURL": "URL bản ghi siêu dữ liệu",
+      "checkCORS": "Không thể thực thi GetRecords trên máy chủ CSW này.",
+      "cors": "CORS",
+      "missingUrlTitle": "Không thể tải Dịch vụ danh mục (CSW)",
+      "missingUrlMessage": "Không thể tải Dịch vụ danh mục (CSW) vì nhóm danh mục không có `url`."
+    },
+    "czml": {
+      "name": "Ngôn ngữ Cesium (CZML)",
+      "dataSourceErrorMessage": "Nguồn dữ liệu này không có chi tiết nào.",
+      "serviceErrorMessage": "Dịch vụ này không có chi tiết nào.",
+      "errorLoadingTitle": "Không thể tải CZML",
+      "errorLoadingMessage": "Lỗi xảy ra khi tải tệp CZML.",
+      "unableToLoadItemTitle": "Không có CZML",
+      "unableToLoadItemMessage": "Mục danh mục CZML không thể tải vì nó không được cấu hình với thuộc tính `url`, `czmlData` hoặc `czmlString`."
+    },
+    "function": {
+      "unknownFormaterTitle": "Bộ định dạng không xác định",
+      "unknownFormaterMessage": "Bộ định dạng tham số hàm {{formatter}} không xác định.\n\nBộ định dạng hợp lệ:\n\n"
+    },
+    "geoJson": {
+      "name": "GeoJSON",
+      "dataSourceErrorMessage": "Nguồn dữ liệu này không có chi tiết nào.",
+      "serviceErrorMessage": "Dịch vụ này không có chi tiết nào.",
+      "errorLoadingTitle": "Lỗi tải GeoJSON",
+      "errorParsingMessage": "Lỗi xảy ra khi phân tích dữ liệu được cung cấp dưới dạng JSON. Điều này có thể chỉ ra rằng tệp không hợp lệ hoặc không được hỗ trợ.",
+      "errorLoadingMessage": "Lỗi xảy ra khi tải tệp GeoJSON. Điều này có thể chỉ ra rằng tệp không hợp lệ hoặc không được hỗ trợ bởi {{appName}}.",
+      "couldNotLoadTitle": "Không thể tải JSON",
+      "couldNotLoadMessage": "Lỗi xảy ra khi truy xuất dữ liệu JSON từ liên kết được cung cấp.CORS",
+      "unableToLoadItemTitle": "Không có GeoJSON",
+      "unableToLoadItemMessage": "Mục danh mục GeoJSON không thể tải vì nó không được cấu hình với thuộc tính `url`, `geoJsonData` hoặc `geoJsonString`.",
+      "unsupportedBrowserTitle": "Trình duyệt không được hỗ trợ",
+      "unsupportedBrowserMessage": "Rất tiếc, trình duyệt của bạn không hỗ trợ API tệp mà {{appName}} yêu cầu để tải tập dữ liệu này. Vui lòng nâng cấp trình duyệt. Để có trải nghiệm tốt nhất, chúng tôi khuyên dùng các phiên bản mới nhất của $t(browsers.chrome) hoặc $t(browsers.firefox) hoặc $t(browsers.edge) hoặc $t(browsers.safari)."
+    },
+    "shapefile": {
+      "name": "Shapefile"
+    },
+    "getToken": {
+      "errorTitle": "Lỗi token",
+      "invalidToken": "<p>Máy chủ token phản hồi với token không hợp lệ.</p><p>Vui lòng báo cáo bằng cách gửi email đến {{email}}</p>",
+      "unableToRequest": "<p>Không thể yêu cầu token từ máy chủ token.</p><p>Vui lòng báo cáo bằng cách gửi email đến {{email}}</p>"
+    },
+    "gltf": {
+      "name": "Định dạng truyền GL (glTF)",
+      "dataSourceErrorMessage": "Nguồn dữ liệu này không có chi tiết nào.",
+      "serviceErrorMessage": "Dịch vụ này không có chi tiết nào.",
+      "notSupportedErrorTitle": "Không hỗ trợ trong 2D",
+      "notSupportedErrorMessage": "\"{{name}}\" không thể hiển thị trong chế độ xem 2D. Chuyển sang 3D và thử lại.",
+      "error": "Lỗi",
+      "unableToRetrieve": "Không thể truy xuất chi tiết đối tượng từ:\n\n{{url}}"
+    },
+    "gpx": {
+      "name": "GPX",
+      "dataSourceErrorMessage": "Nguồn dữ liệu này không có chi tiết nào.",
+      "serviceErrorMessage": "Dịch vụ này không có chi tiết nào.",
+      "errorLoadingTitle": "Lỗi tải GPX",
+      "errorLoadingMessage": "Lỗi xảy ra khi tải tệp GPX. Điều này có thể chỉ ra rằng tệp không hợp lệ hoặc không được {{appName}} hỗ trợ."
+    },
+    "georss": {
+      "name": "GeoRSS",
+      "subtitle": "Phụ đề",
+      "updated": "Đã cập nhật",
+      "category": "Danh mục",
+      "description": "Mô tả",
+      "copyrightText": "Văn bản bản quyền",
+      "link": "Liên kết",
+      "author": "Tác giả",
+      "errorLoadingTitle": "Không thể tải GeoRSS",
+      "errorLoadingMessage": "Lỗi xảy ra khi tải tệp GeoRSS.",
+      "unableToLoadItemTitle": "Không có GeoRSS",
+      "unableToLoadItemMessage": "Mục danh mục GeoRSS không thể tải vì nó không được cấu hình với thuộc tính `url` hoặc `geoRss`."
+    },
+    "imageryLayer": {
+      "intervalSupportErrorTitle": "Khoảng không được hỗ trợ",
+      "intervalSupportErrorMessage": "Rất tiếc, các mục danh mục {{typeName}} ({{type}}) hiện tại không thể biến đổi theo thời gian bằng cách chỉ định thuộc tính \"intervals\".",
+      "resolvingAvailability": "Đang giải quyết tính khả dụng tại một vị trí...",
+      "accessingBaseMapErrorTitle": "Lỗi truy cập bản đồ nền",
+      "accessingBaseMapErrorMessage": "Lỗi xảy ra khi tải gạch cho bản đồ nền:<p><center>{{name}} </center></p> Vui lòng chọn bản đồ nền khác bằng nút Bản đồ ở góc trên bên phải.",
+      "accessingCatalogItemErrorTitle": "Lỗi truy cập mục danh mục",
+      "accessingCatalogItemErrorMessage": "Lỗi xảy ra khi tải gạch cho mục danh mục:<p><center>{{name}}</center></p> Mục danh mục đã bị ẩn khỏi bản đồ. Bạn có thể hiển thị lại trong bảng Hiện đang xem để thử lại.",
+      "tileErrorTitle": "Lỗi gạch",
+      "tileErrorMessage": "Gạch với URL:\n{{url}}\n thành công khi tải bằng XMLHttpRequest nhưng thất bại nhiều lần khi tải trực tiếp bởi Cesium hoặc Leaflet.\n Điều này có thể chỉ ra rằng máy chủ rất nhạy cảm với tiêu đề yêu cầu được cung cấp hoặc đơn giản là không đáng tin cậy.",
+      "tileErrorMessageII": "Nhận phản hồi 200 (OK) từ URL:\n{{url}}\nnhưng không thể tải dưới dạng hình ảnh.",
+      "unknownTileErrorTitle": "Lỗi gạch không xác định",
+      "unknownTileErrorMessage": "Khi truy cập URL:\n{{url}}\nĐiều này có thể chỉ ra một trong những điều sau:\n* Không thể phân giải tên máy chủ,\n* Máy chủ không phản hồi yêu cầu, hoặc\n* Máy chủ từ chối quyền truy cập Chia sẻ tài nguyên đa nguồn gốc (CORS) vào URL này (Xem https://docs.terria.io/guide/connecting-to-data/cross-origin-resource-sharing/).",
+      "unableToDisplayTitle": "Không thể hiển thị tập dữ liệu",
+      "unableToDisplayMessage": "{{name}} không thể hiển thị trong 2D vì nó không hỗ trợ phép chiếu Web Mercator (EPSG:3857) tiêu chuẩn. Vui lòng chuyển sang 3D nếu được hỗ trợ trên hệ thống của bạn, cập nhật tập dữ liệu để hỗ trợ phép chiếu hoặc dùng tập dữ liệu khác.",
+      "unableToShowLocTitle": "Không thể hiển thị tại vị trí này",
+      "unableToShowLocMessage": "{{name}} không thể hiển thị tại vị trí này vì thời gian chụp có sẵn không xác định. Không tìm thấy thuộc tính {{featureTimesProperty}}."
+    },
+    "invokeAnalyticsService": {
+      "invocationFailedTitle": "Lời gọi dịch vụ không thành công",
+      "invocationFailedMessage": "Lỗi xảy ra trên máy chủ khi tính toán {{invocationName}}."
+    },
+    "ionImagery": {
+      "name": "Hình ảnh Cesium ion"
+    },
+    "kml": {
+      "name": "KML hoặc KMZ",
+      "dataSourceErrorMessage": "Nguồn dữ liệu này không có chi tiết nào.",
+      "serviceErrorMessage": "Dịch vụ này không có chi tiết nào.",
+      "unexpectedTypeTitle": "Loại dữ liệu KML không mong đợi",
+      "unexpectedTypeMessage": "KmlCatalogItem.data dự kiến là Tài liệu XML, Blob hoặc File, nhưng nó không phải bất kỳ loại nào trong số này. Điều này có thể chỉ ra lỗi trong {{appName}} hoặc sử dụng sai API {{appName}}.",
+      "errorLoadingTitle": "Lỗi tải KML hoặc KMZ",
+      "errorLoadingMessage": "Lỗi xảy ra khi tải tệp KML hoặc KMZ. Điều này có thể chỉ ra rằng tệp không hợp lệ hoặc không được {{appName}} hỗ trợ.",
+      "unableToLoadItemTitle": "Không có KML",
+      "unableToLoadItemMessage": "Mục danh mục KML/KMZ không thể tải vì nó không được cấu hình với thuộc tính `url`, `kmlData` hoặc `kmlString`."
+    },
+    "magda": {
+      "name": "Phân phối MAGDA",
+      "dataSourceErrorMessage": "Nguồn dữ liệu này không có chi tiết nào.",
+      "serviceErrorMessage": "Dịch vụ này không có chi tiết nào.",
+      "distributionDesc": "Mô tả phân phối",
+      "idsNotSpecifiedTitle": "Phải chỉ định recordId",
+      "idsNotSpecifiedMessage": "MagdaReference yêu cầu chỉ định recordId.",
+      "retrieveErrorTitle": "Lỗi truy xuất bản ghi MAGDA",
+      "retrieveErrorMessage": "Không cung cấp ID phân phối hoặc tập dữ liệu",
+      "notCompatibleTitle": "Không tìm thấy phân phối tương thích",
+      "notCompatibleMessageI": "Tập dữ liệu MAGDA không có phân phối với ID {{distributionId}} hoặc nó không có định dạng được hỗ trợ.",
+      "notCompatibleMessageII": "Tập dữ liệu MAGDA không có bất kỳ phân phối nào với định dạng được hỗ trợ."
+    },
+    "terria-reference": {
+      "failedToLoadTarget": "Không tải được thành viên từ danh mục bên ngoài"
+    },
+    "mapboxMap": {
+      "name": "Bản đồ Mapbox"
+    },
+    "mapboxVectorTile": {
+      "name": "Gạch vectơ Mapbox"
+    },
+    "mapboxStyle": {
+      "name": "Kiểu Mapbox"
+    },
+    "senaps": {
+      "name": "Vị trí Senaps",
+      "retrieveErrorTitle": "Lỗi xử lý mục danh mục Senaps",
+      "generalErrorMessage": "Gặp lỗi khi xử lý dữ liệu Senaps",
+      "missingKeyErrorMessage": "Khóa API Senaps nên được thêm vào cấu hình terriajs-server bằng tùy chọn appendParamToQueryString",
+      "locationHeadingFeatureInfo": "Vị trí",
+      "availableStreamsHeadingFeatureInfo": "Luồng có sẵn",
+      "noStreamsMessageFeatureInfo": "Không có luồng tại vị trí này.",
+      "missingSenapsBaseUrl": "Thiếu url cơ sở Senaps. Bạn đã đăng nhập chưa?"
+    },
+    "openStreetMap": {
+      "name": "Open Street Map"
+    },
+    "placesLikeMe": {
+      "regionsLikeThisName": "Khu vực như thế này",
+      "regionsLikeThisDescription": "Xác định các khu vực _giống nhất_ với một khu vực nhất định theo một tập hợp đặc điểm nhất định.",
+      "regionTypeName": "Loại khu vực",
+      "regionTypeDescription": "Loại khu vực để phân tích.",
+      "regionName": "Khu vực",
+      "regionDescription": "Khu vực để phân tích. Phân tích sẽ xác định khu vực nào giống nhất với khu vực này.",
+      "characteristics": "Đặc điểm",
+      "characteristicsDescription": "Các đặc điểm khu vực cần đưa vào phân tích.",
+      "name": "Nơi giống tôi",
+      "regioNotSelectedName": "Chưa chọn khu vực",
+      "regioNotSelectedDescription": "Bạn phải chọn một khu vực.",
+      "placesLike": "Nơi giống {{regionName}}",
+      "likenessesError": "Danh sách điểm tương đồng và danh sách mã khu vực không chứa cùng số lượng phần tử."
+    },
+    "raiseError": {
+      "errorTitle": "Đã xảy ra lỗi",
+      "notificationFeedback": "Để đặt câu hỏi hoặc phản hồi, nhấp vào đây.",
+      "notificationFeedbackEmail": "Để đặt câu hỏi hoặc phản hồi, vui lòng liên hệ {{email}}",
+      "developerDetails": "Chi tiết nhà phát triển"
+    },
+    "regionMapping": {
+      "noDataForDate": "Không có dữ liệu cho ngày đã chọn.",
+      "noDataForRegion": "Không có dữ liệu cho khu vực đã chọn.",
+      "outdatedBrowserTitle": "Trình duyệt lỗi thời",
+      "outdatedBrowserMessage": "Bạn đang sử dụng trình duyệt rất cũ không thể hiển thị tập dữ liệu \"được ánh xạ theo khu vực\" như tập dữ liệu này. Vui lòng nâng cấp lên phiên bản mới nhất của $t(browsers.chrome), $t(browsers.firefox), $t(browsers.edge) hoặc $t(browsers.safari) càng sớm càng tốt.",
+      "invalidServerTypeTitle": "Loại máy chủ không hợp lệ {{serverType}} trong regionMapping.json",
+      "invalidServerTypeMessage": "Dự kiến serverType là \"WMS\" hoặc \"vector\" nhưng nhận được \"{{serverType}}\"",
+      "notRecognised": "Các tên khu vực này đã {{notRecognisedText}} ",
+      "notRecognisedText": "không được công nhận",
+      "moreThanOneValue": "Các khu vực này đã {{moreThanOneValueText}}",
+      "moreThanOneValueText": "nhiều hơn một giá trị",
+      "msg": "Tham khảo {{link}} để xem cách định dạng tệp.",
+      "csvSpecification": "Thông số kỹ thuật csv-geo-au",
+      "issuesLoadingTitle": "Sự cố khi tải {{name}}"
+    },
+    "feedback": {
+      "thanksTitle": "Cảm ơn phản hồi của bạn!",
+      "thanksMessage": "Phản hồi của bạn giúp {{appName}} tốt hơn",
+      "unableToSendTitle": "Không thể gửi phản hồi",
+      "unableToSendMessage": "Thật đáng xấu hổ, nhưng đã xảy ra lỗi khi cố gửi phản hồi của bạn. Vui lòng gửi email đến {{email}}."
+    },
+    "resultPending": {
+      "name": "Kết quả đang chờ"
+    },
+    "sensorObservationService": {
+      "procedure": "Thủ tục",
+      "property": "Thuộc tính",
+      "sos": "SOS",
+      "alreadyLoadingTitle": "Dữ liệu đang tải",
+      "alreadyLoadingMessage": "Dữ liệu của bạn vẫn đang tải. Bạn sẽ có thể thay đổi hiển thị khi nó tải xong",
+      "unknownError": "Máy chủ báo cáo lỗi không xác định.",
+      "exceptionMessage": "Máy chủ báo cáo lỗi: \n\n {{exceptionText}}",
+      "missingBody": "Máy chủ phản hồi thiếu nội dung.",
+      "noFeatures": "Không có đối tượng nào phù hợp với truy vấn của bạn.",
+      "unknownFormat": "Máy chủ phản hồi với định dạng đối tượng không xác định.",
+      "noMatchingFeatures": "Dịch vụ Sensor Observation không trả về bất kỳ đối tượng nào phù hợp với truy vấn của bạn."
+    },
+    "openDataSoft": {
+      "viewDatasetPage": "Xem trang tập dữ liệu"
+    },
+    "sdmxServerStratum": {
+      "sdmxStructureLoadErrorTitle": "Yêu cầu cấu trúc SDMX thất bại",
+      "loadDataErrorTitle": "Không tải được nhóm SDMX",
+      "loadDataErrorMessage": "Máy chủ không có luồng dữ liệu"
+    },
+    "sdmxJsonDataflowStratum": {
+      "loadDataErrorTitle": "Không thể tải luồng dữ liệu SDMX",
+      "loadDataErrorMessage": {
+        "invalidResponse": "Đối tượng JSON không hợp lệ",
+        "noDatastructure": "Không tìm thấy cấu trúc dữ liệu nào cho luồng dữ liệu {{catalogItem.dataflowId}}",
+        "noDataflow": "Luồng dữ liệu {{catalogItem.dataflowId}} không hợp lệ"
+      },
+      "defaultUnitMeasure": "Đơn vị"
+    },
+    "sdmxCatalogItem": {
+      "viewBy": {
+        "title": "Xem theo",
+        "time": "Chuỗi thời gian",
+        "region": "Khu vực"
+      },
+      "loadDataErrorTitle": "Không tải được dữ liệu SDMX cho {{name}}",
+      "loadDataErrorMessage": "Phản hồi không hợp lệ từ {{csvUrl}}",
+      "noResultsWithDimensions": "Không tìm thấy kết quả. Vui lòng chọn giá trị chiều khác trong bàn làm việc ngoài những giá trị sau:  \n\n{{dimensions}}"
+    },
+    "time": {
+      "invalidDate": "Ngày không hợp lệ",
+      "invalidInitialTimeSource": "Nguồn initialTimeSource không hợp lệ được chỉ định trong tệp cấu hình: {{initialTimeSource}}"
+    },
+    "shareData": {
+      "generateErrorTitle": "Không thể tạo URL ngắn.",
+      "generateErrorMessage": "Đã xảy ra sự cố khi sử dụng dịch vụ chia sẻ dữ liệu để tạo URL ngắn.",
+      "generateErrorDataExceedsLimitMessage": "Lỗi: Dữ liệu chia sẻ vượt quá giới hạn",
+      "expandErrorTitle": "Không thể mở rộng URL",
+      "expandErrorMessage": "Không tìm thấy dịch vụ chia sẻ dữ liệu được sử dụng để khởi chạy {{appName}}. Điều này có thể chỉ ra lỗi trong liên kết hoặc dịch vụ hiện không khả dụng."
+    },
+    "socrataServer": {
+      "name": "Máy chủ Socrata",
+      "retrieveErrorMessage": "Không thể truy xuất gói từ máy chủ Socrata này.",
+      "description": "Mô tả",
+      "licence": "Giấy phép",
+      "attributes": "Thuộc tính",
+      "tags": "Thẻ"
+    },
+    "spatialDetailing": {
+      "name": "Chi tiết hóa không gian",
+      "description": "Dự đoán đặc điểm của các khu vực chi tiết bằng cách học và khai thác tương quan của dữ liệu thô với đặc điểm điều tra dân số.",
+      "regionTypeToPredictName": "Loại khu vực cần dự đoán",
+      "regionTypeToPredictDescription": "Loại khu vực cần dự đoán đặc điểm.",
+      "coarseDataRegionTypeName": "Loại khu vực dữ liệu thô",
+      "coarseDataRegionTypeDescription": "Loại khu vực mà các đặc điểm đầu vào thô được liên kết.",
+      "aggregationName": "Tổng hợp",
+      "aggregationDescription": "Chỉ định cách giá trị khu vực thô được tổng hợp. True nếu giá trị là trung bình của các giá trị trên khu vực hoặc False nếu giá trị là tổng của các giá trị trên khu vực.",
+      "aggregationTrueName": "Tổng hợp trung bình",
+      "aggregationTrueDescription": "Giá trị khu vực thô là trung bình của các mẫu trong khu vực. Ví dụ: thu nhập hộ gia đình trung bình.",
+      "aggregationFalseName": "Tổng hợp tổng",
+      "aggregationFalseDescription": "Giá trị khu vực thô là tổng của các mẫu trong khu vực. Ví dụ: tổng dân số.",
+      "characteristicToPredictName": "Đặc điểm cần dự đoán",
+      "characteristicToPredictDescription": "Đặc điểm cần dự đoán cho mỗi khu vực.",
+      "spatialDetailingOf": "Chi tiết hóa không gian của {{of}} tại {{at}}",
+      "wrongNumberOfElements": "Danh sách giá trị và danh sách mã khu vực không chứa cùng số lượng phần tử"
+    },
+    "tableData": {
+      "noData": "Không có dữ liệu để hiển thị",
+      "unsupportedCharactersTitle": "Ký tự không được hỗ trợ trong cột vĩ độ và kinh độ",
+      "unsupportedCharactersMessage": "Không thể diễn giải cặp vĩ độ và kinh độ {{longitude}}, {{latitude}}",
+      "bulkGeocoderInfoTitle": "Thông tin bộ mã hóa địa lý hàng loạt",
+      "bulkGeocoderInfoMessage": "CSV chứa địa chỉ, nhưng {{number}} không thể định vị trên bản đồ: ",
+      "bulkGeocoderInfo2Message": "{{nullAddresses}} địa chỉ bị thiếu trong CSV.",
+      "bulkGeocoderErrorTitle": "Lỗi bộ mã hóa địa lý hàng loạt",
+      "bulkGeocoderErrorMessage": "Không thể ánh xạ địa chỉ đến tọa độ lat-long, vì đã xảy ra lỗi khi truy xuất tọa độ địa chỉ. Vui lòng kiểm tra kết nối internet hoặc thử lại sau.",
+      "legendZFilterLabel": "Giá trị cực đoan",
+      "legendNullLabel": "(Không có giá trị)",
+      "activeStyle": "Hiển thị biến",
+      "styleDisabledLabel": "Tắt kiểu",
+      "zFilterEnabled": "Giá trị cực đoan bị ẩn (nhấp để hiển thị)",
+      "zFilterDisabled": "Phát hiện giá trị cực đoan (nhấp để ẩn)",
+      "timeDimensionEnabled": "Thời gian được bật (nhấp để tắt)",
+      "timeDimensionDisabled": "Thời gian bị tắt (nhấp để bật)",
+      "editStyle": "Chỉnh sửa kiểu",
+      "custom": "Tùy chỉnh",
+      "regionMapping": "Ánh xạ khu vực",
+      "regionColumn": "Cột khu vực",
+      "manualRegionMapping": "Ánh xạ khu vực thủ công"
+    },
+    "terrainCatalog": {
+      "notSupportedErrorTitle": "Không hỗ trợ trong 2D",
+      "notSupportedErrorMessage": "{{name}} không thể hiển thị trong chế độ xem 2D. Chuyển sang 3D và thử lại"
+    },
+    "terria": {
+      "loadConfigErrorTitle": "Không tải được cấu hình bản đồ Terria",
+      "proxyableDomainsDeprecation": "`proxyableDomainsUrl` không còn được hỗ trợ trong v8",
+      "initErrorTitle": "Không khởi tạo được dịch vụ",
+      "initErrorMessage": "Đã xảy ra sự cố với máy chủ Terria. Điều này có thể khiến một số lớp hoặc dịch vụ chuyển đổi không khả dụng.",
+      "urlLoadErrorTitle": "Sự cố tải URL",
+      "urlLoadErrorMessage": "Đã xảy ra sự cố khi khởi tạo Terria với tham số URL.",
+      "loadModelErrorMessage": "Lỗi xảy ra khi tải mô hình `{{model}}`.",
+      "loadingMagdaInitSourceErrorTitle": "Lỗi tải nguồn khởi tạo Magda",
+      "loadingMagdaInitSourceErrorMessage": "Lỗi xảy ra khi tải thông tin khởi tạo từ bản ghi Magda `{{url}}`.",
+      "loadingInitSourcesErrorTitle": "Lỗi tải cấu hình bản đồ",
+      "loadingInitSourcesErrorMessage": "Đã xảy ra lỗi khi tải cấu hình bản đồ {{appName}} &mdash; nó có thể không hiển thị chính xác. Vui lòng thử tải lại bản đồ và nếu sự cố vẫn tiếp diễn, vui lòng báo cáo bằng cách gửi email đến {{email}} hoặc bạn có thể nhấn nút bên dưới.",
+      "loadingInitSourceErrorTitle": "Lỗi tải nguồn khởi tạo",
+      "loadingInitSourceErrorMessage": "Không thể tải thông tin khởi tạo từ `{{fragment}}` vì không có initFragmentPaths nào được xác định.",
+      "loadingInitSourceError2Message": "Lỗi xảy ra khi tải thông tin khởi tạo từ:  \n*`{{loadSource}}`*.",
+      "loadingInitJsonMessage": "Lỗi xảy ra khi tải tệp JSON {{url}}.",
+      "loadingBaseMapsErrorTitle": "Lỗi tải bản đồ nền",
+      "loadingBaseMapErrorTitle": "Lỗi tải bản đồ nền: `{{name}}`",
+      "loadingShareDataErrorTitle": "Lỗi tải dữ liệu chia sẻ",
+      "parsingStartDataErrorMessage": "Lỗi xảy ra khi phân tích dữ liệu bắt đầu JSON.",
+      "loadingWorkbenchItemErrorTitle": "Lỗi tải mục trong bàn làm việc: `{{name}}`",
+      "disclaimer": "Tuyên bố miễn trừ",
+      "buttonTitleConfirm": "Tôi đồng ý"
+    },
+    "terriaJSONcatalog": {
+      "name": "Hàm danh mục JSON Terria",
+      "misconfiguredErrorTitle": "Tệp init được cấu hình sai",
+      "misconfiguredErrorMessage": "Dịch vụ không được cấu hình cho TerriaJsonCatalogFunction HTTP 202.",
+      "misconfiguredError2Message": "Cấu hình HTTP 202 {{url}} không có trong phản hồi {{xhr}}",
+      "serviceResponseErrorTitle": "Phản hồi dịch vụ không phải chuỗi JSON",
+      "serviceResponseErrorMessage": "TerriaJsonCatalogFunction dự kiến nhận chuỗi JSON, nhận được {{xhr}}",
+      "requestFailedTitle": "Yêu cầu thất bại",
+      "requestFailedMessage": "Yêu cầu thất bại với mã trạng thái {{status}}.",
+      "asyncResultDescription": "Đây là kết quả của việc gọi quy trình hoặc dịch vụ {{name}} tại {{timestamp}} với các tham số đầu vào bên dưới.",
+      "loadingInitSourceErrorTitle": "Lỗi tải nguồn khởi tạo",
+      "loadingInitSourceErrorMessage": "Lỗi tải nguồn khởi tạo {{fragment}} vì không có initFragmentPaths nào được xác định.",
+      "loadingInitSourceError2Message": "Lỗi xảy ra khi tải thông tin khởi tạo từ:  \n*`{{loadSource}}`*.",
+      "disclaimer": "Tuyên bố miễn trừ",
+      "buttonTitleConfirm": "Tôi đồng ý"
+    },
+    "thredds": {
+      "nameGroup": "Nhóm danh mục THREDDS"
+    },
+    "threddsItem": {
+      "name": "Tham chiếu mục THREDDS"
+    },
+    "urlTemplateMapServer": {
+      "name": "Máy chủ bản đồ mẫu URL"
+    },
+    "userDrawing": {
+      "devError": "Thể hiện Terria là bắt buộc.",
+      "messageHeader": "Vẽ trên bản đồ",
+      "pointEntities": "Điểm",
+      "otherEntities": "Đường và đa giác",
+      "line": "Đường",
+      "firstPoint": "Điểm đầu tiên",
+      "btnCancel": "Hủy",
+      "btnDone": "Hoàn thành",
+      "clickToAddFirstPoint": "Nhấp để thêm điểm",
+      "clickToAddAnotherPoint": "Nhấp để thêm điểm khác",
+      "clickToRedrawRectangle": "Nhấp điểm khác để vẽ lại hình chữ nhật",
+      "anotherPoint": "Điểm khác",
+      "userPolygon": "Đa giác người dùng"
+    },
+    "webFeatureServiceCatalogGroup": {
+      "wfsServer": "Máy chủ Web Feature Service (WFS)",
+      "invalidWFSServerTitle": "Máy chủ WFS không hợp lệ",
+      "invalidWFSServerMessage": "Lỗi xảy ra khi gọi GetCapabilities trên máy chủ WFS. Phản hồi của máy chủ dường như không phải là tài liệu GetCapabilities hợp lệ.",
+      "groupNotAvailableTitle": "Nhóm không khả dụng",
+      "groupNotAvailableMessage": "Lỗi xảy ra khi gọi GetCapabilities trên máy chủ WFS.",
+      "abstract": "Mô tả Web Feature Service",
+      "accessConstraints": "Hạn chế truy cập Web Feature Service",
+      "fees": "Phí Web Feature Service"
+    },
+    "webFeatureServiceCatalogItem": {
+      "wfs": "Web Feature Service (WFS)",
+      "dataDescription": "Mô tả dữ liệu",
+      "abstract": "Mô tả Web Feature Service",
+      "serviceDescription": "Mô tả dịch vụ",
+      "metadataUrls": "Liên kết siêu dữ liệu",
+      "accessConstraints": "Hạn chế truy cập",
+      "serviceContact": "Liên hệ dịch vụ",
+      "getCapabilitiesUrl": "GetCapabilities URL",
+      "noLayerFoundTitle": "Không tìm thấy lớp",
+      "noLayerFoundMessage": "Tập dữ liệu WFS '{{name}}' không có lớp nào khớp '{{typeNames}}'. Có thể tệp danh mục được thiết lập không chính xác hoặc máy chủ WFS đã thay đổi.",
+      "missingDataTitle": "Thiếu dữ liệu",
+      "missingDataMessage": "Tập dữ liệu WFS '{{name}}' không trả về bất kỳ dữ liệu nào. Có thể tệp danh mục được thiết lập không chính xác hoặc địa chỉ máy chủ đã thay đổi.",
+      "missingUrlTitle": "Không thể tải GetCapabilities",
+      "missingUrlMessage": "Không thể tải tài liệu Web Feature Service (WFS) GetCapabilities vì mục danh mục không có `url`.",
+      "reachedMaxFeatureLimit": "Cảnh báo: Lớp này đã đạt giới hạn tính năng WFS ({{maxFeatures}})"
+    },
+    "webMapServiceCatalogGroup": {
+      "wmsServer": "Máy chủ Web Map Service (WMS)",
+      "invalidWMSServerTitle": "Máy chủ WMS không hợp lệ",
+      "invalidWMSServerMessage": "Lỗi xảy ra khi gọi GetCapabilities trên máy chủ WMS. Phản hồi của máy chủ dường như không phải là tài liệu GetCapabilities hợp lệ.",
+      "groupNotAvailableTitle": "Nhóm không khả dụng",
+      "groupNotAvailableMessage": "Lỗi xảy ra khi gọi GetCapabilities trên máy chủ WMS.",
+      "missingUrlTitle": "Không thể tải GetCapabilities",
+      "missingUrlMessage": "Không thể tải tài liệu Web Map Service (WMS) GetCapabilities vì mục danh mục không có `url`.",
+      "abstract": "Mô tả Web Map Service",
+      "accessConstraints": "Hạn chế truy cập Web Map Service",
+      "fees": "Phí Web Map Service"
+    },
+    "webMapServiceCatalogItem": {
+      "wms": "Web Map Service (WMS)",
+      "dataDescription": "Mô tả dữ liệu",
+      "serviceDescription": "Mô tả dịch vụ",
+      "metadataUrls": "Liên kết siêu dữ liệu",
+      "accessConstraints": "Hạn chế truy cập",
+      "serviceContact": "Liên hệ dịch vụ",
+      "getCapabilitiesUrl": "GetCapabilities URL",
+      "defaultStyleLabel": "Kiểu mặc định",
+      "noLayerFoundTitle": "Không tìm thấy lớp",
+      "noLayerFoundMessage": "Tập dữ liệu WMS '{{name}}' không có lớp nào khớp '{{layers}}'. Có thể tệp danh mục được thiết lập không chính xác hoặc máy chủ WMS đã thay đổi.",
+      "badlyFormatedTitle": "Tính tuần hoàn định dạng sai",
+      "badlyFormatedMessage": "Tập dữ liệu '{{name}}' có tính tuần hoàn định dạng sai, '{{isoSegments}}'. Nhấp nút Thông tin của tập dữ liệu để biết thêm thông tin về tập dữ liệu và người quản lý dữ liệu.",
+      "missingDataTitle": "Thiếu dữ liệu",
+      "missingDataMessage": "Tập dữ liệu WMS '{{name}}' không trả về bất kỳ dữ liệu nào.{{line}}{{line}}Có thể tệp danh mục được thiết lập không chính xác hoặc địa chỉ máy chủ đã thay đổi.",
+      "missingUrlTitle": "Không thể tải GetCapabilities",
+      "missingUrlMessage": "Không thể tải tài liệu Web Map Service (WMS) GetCapabilities vì mục danh mục không có `url`."
+    },
+    "webMapTileServiceCatalogGroup": {
+      "wmtsServer": "Máy chủ Web Map Tile Service (WMTS)",
+      "invalidWMTSServerTitle": "Máy chủ WMTS không hợp lệ",
+      "invalidWMTSServerMessage": "Lỗi xảy ra khi gọi GetCapabilities trên máy chủ WMTS. Phản hồi của máy chủ dường như không phải là tài liệu GetCapabilities hợp lệ.",
+      "groupNotAvailableTitle": "Nhóm không khả dụng",
+      "groupNotAvailableMessage": "Lỗi xảy ra khi gọi GetCapabilities trên máy chủ WMTS.",
+      "abstract": "Mô tả Web Map Service",
+      "accessConstraints": "Hạn chế truy cập Web Map Service",
+      "fees": "Phí Web Map Service",
+      "invalidCapabilitiesTitle": "GetCapabilities không hợp lệ",
+      "invalidCapabilitiesMessage": "URL {{url}} đã được truy xuất thành công nhưng nó dường như không phải là tài liệu Web Map Tile Service (WMTS) GetCapabilities hợp lệ. \n\nCó thể tệp danh mục được thiết lập không chính xác hoặc địa chỉ máy chủ đã thay đổi."
+    },
+    "webMapTileServiceCatalogItem": {
+      "wmts": "Web Map Tile Service (WMTS)",
+      "dataDescription": "Mô tả dữ liệu",
+      "serviceDescription": "Mô tả dịch vụ",
+      "accessConstraints": "Hạn chế truy cập",
+      "fees": "Phí Web Map Tile Service",
+      "serviceContact": "Liên hệ dịch vụ",
+      "getCapabilitiesUrl": "GetCapabilities URL",
+      "missingUrlTitle": "Không thể tải GetCapabilities",
+      "missingUrlMessage": "Không thể tải tài liệu Web Map Tile Service (WMTS) GetCapabilities vì mục danh mục không có `url`.",
+      "noUsableTileMatrixTitle": "Cảnh báo",
+      "noUsableTileMatrixMessage": "Lớp WMTS này không có bộ ma trận gạch Web Mercator - nó có thể không hiển thị chính xác"
+    },
+    "webProcessingService": {
+      "wps": "Web Processing Service (WPS)",
+      "invalidWPSServerTitle": "Máy chủ WPS không hợp lệ",
+      "invalidWPSServerMessage": "Lỗi xảy ra khi gọi {{endpoint}} trên máy chủ WPS cho tên quy trình {{name}}. Phản hồi của máy chủ dường như không phải là tài liệu {{endpoint}} hợp lệ.",
+      "processDescriptionErrorTitle": "Quy trình không có mô tả quy trình",
+      "processDescriptionErrorMessage": "WPS DescribeProcess cho quy trình này không bao gồm ProcessDescription.",
+      "processInputErrorTitle": "Quy trình không có đầu vào",
+      "processInputErrorMessage": "Quy trình WPS này không chỉ định bất kỳ đầu vào nào.",
+      "unsupportedParameterErrorTitle": "Loại tham số không được hỗ trợ",
+      "unsupportedParameterErrorMessage": "Tham số {{identifier}} không phải là loại tham số được hỗ trợ.",
+      "invalidResponseErrorTitle": "Phản hồi máy chủ WPS không hợp lệ",
+      "invalidResponseErrorMessage": "Lỗi xảy ra khi truy cập vị trí trạng thái trên máy chủ WPS cho tên quy trình {{name}}.",
+      "invalidResponseError2Title": "Phản hồi không hợp lệ từ máy chủ WPS",
+      "invalidResponseError2Message": "Phản hồi từ máy chủ WPS không bao gồm phần tử Trạng thái.",
+      "failureReasonUnknowError": "Lý do thất bại không xác định.",
+      "asyncShortReportFailed": "Lời gọi dịch vụ Web Processing không thành công. Chi tiết khác có sẵn trên bảng Thông tin.",
+      "errorDetails": "Chi tiết lỗi",
+      "resultPendingDescription": "Đây là kết quả của việc gọi quy trình hoặc dịch vụ {{name}} tại {{timestamp}} với các tham số đầu vào bên dưới.",
+      "regionTypeDescription": "Loại khu vực để phân tích.",
+      "regionTypeName": "Loại khu vực",
+      "regionParameterName": "Tham số khu vực",
+      "wpsServer": "Máy chủ Web Processing Service (WPS)",
+      "wpsResult": "Kết quả Web Processing Service"
+    },
+    "webProcessingServiceCatalogGroup": {
+      "typeName": "Máy chủ Web Processing Service (WPS)",
+      "missingUrlTitle": "Không thể tải GetCapabilities",
+      "missingUrlMessage": "Không thể tải tài liệu Web Processing Service (WPS) GetCapabilities vì mục danh mục không có `url`.",
+      "invalidCapabilitiesTitle": "GetCapabilities không hợp lệ",
+      "invalidCapabilitiesMessage": "URL {{url}} đã được truy xuất thành công nhưng nó dường như không phải là tài liệu Web Processing Service (WPS) GetCapabilities hợp lệ. \n\nCó thể tệp danh mục được thiết lập không chính xác hoặc địa chỉ máy chủ đã thay đổi.",
+      "invalidServerTitle": "Máy chủ WPS không hợp lệ",
+      "invalidServerMessage": "Lỗi xảy ra khi gọi GetCapabilities trên máy chủ WPS. Phản hồi của máy chủ dường như không phải là tài liệu GetCapabilities hợp lệ.",
+      "abstract": "Mô tả Web Processing Service",
+      "accessConstraints": "Hạn chế truy cập Web Processing Service",
+      "fees": "Phí Web Processing Service",
+      "providerName": "Tên nhà cung cấp Web Processing Service",
+      "providerSite": "Trang nhà cung cấp Web Processing Service"
+    },
+    "wfsFeatures": {
+      "featuresGroup": "Nhóm các tính năng trong máy chủ Web Feature Service (WFS)",
+      "queryErrorTitle": "Lỗi truy vấn máy chủ WFS",
+      "queryErrorMessage": "Lỗi xảy ra khi gọi GetFeature trên máy chủ WFS. Phản hồi của máy chủ dường như không phải là tài liệu GeoJSON hợp lệ.",
+      "groupNotAvailableTitle": "Nhóm không khả dụng",
+      "groupNotAvailableMessage": "Lỗi xảy ra khi gọi GetFeature trên máy chủ WFS."
+    },
+    "shadow": {
+      "name": "Bóng",
+      "options": {
+        "none": "Không",
+        "cast": "Chỉ đổ bóng",
+        "receive": "Chỉ nhận bóng",
+        "both": "Đổ và nhận bóng"
+      }
+    },
+    "clippingBox": {
+      "groupName": "Hộp cắt",
+      "clipModel": "Cắt mô hình",
+      "showClippingBox": "Hiển thị hộp cắt",
+      "keepBoxAboveGround": "Chỉ trên mặt đất",
+      "clipDirection": {
+        "name": "Hướng cắt",
+        "options": {
+          "inside": "Cắt bên trong hộp",
+          "outside": "Cắt bên ngoài hộp"
+        }
+      }
+    },
+    "commonModelErrors": {
+      "3dTypeIn2dMode": "**Lưu ý:** Tập dữ liệu này không thể hiển thị trong trình xem 2D. Chuyển sang một trong các chế độ bản đồ 3D."
+    },
+    "scaleDatasetNotVisible": {
+      "scaleZoomIn": "Tập dữ liệu không khả dụng ở tỷ lệ này, phóng to để xem",
+      "scaleZoomOut": "Tập dữ liệu không khả dụng ở tỷ lệ này, thu nhỏ để xem"
+    },
+    "tableStyling": {
+      "hideAdvancedOptions": "Ẩn tùy chọn nâng cao",
+      "showAdvancedOptions": "Hiển thị tùy chọn nâng cao",
+      "copyUserStratum": "Sao chép stratum người dùng vào bảng nhớ tạm",
+      "name": "Kiểu",
+      "reset": "Đặt lại kiểu mặc định",
+      "data": {
+        "name": "Dữ liệu",
+        "selectableDimensions": {
+          "dataset": {
+            "name": "Tập dữ liệu"
+          },
+          "tableStyle": {
+            "name": "Kiểu"
+          },
+          "tableStyleType": {
+            "name": "Ký hiệu",
+            "options": {
+              "fill": {
+                "name": "Màu tô"
+              },
+              "pointSize": {
+                "name": "Kích thước điểm"
+              },
+              "point": {
+                "name": "Kiểu điểm/ký hiệu"
+              },
+              "outline": {
+                "name": "Màu viền"
+              },
+              "label": {
+                "name": "Kiểu nhãn"
+              },
+              "trail": {
+                "name": "Kiểu vệt"
+              }
+            }
+          }
+        }
+      },
+      "fill": {
+        "name": "Màu tô",
+        "selectableDimensions": {
+          "tableColorColumn": {
+            "name": "Biến"
+          },
+          "dataType": {
+            "name": "Loại cột (nâng cao)"
+          },
+          "type": {
+            "name": "Loại",
+            "undefinedLabel": "Vui lòng chỉ định",
+            "options": {
+              "noStyle": {
+                "name": "Không kiểu"
+              },
+              "sequentialContinuous": {
+                "name": "Tuần tự (liên tục)"
+              },
+              "sequentialDiscrete": {
+                "name": "Tuần tự (rời rạc)"
+              },
+              "divergingContinuous": {
+                "name": "Phân kỳ (liên tục)"
+              },
+              "divergingDiscrete": {
+                "name": "Phân kỳ (rời rạc)"
+              },
+              "qualitative": {
+                "name": "Định tính"
+              },
+              "customQualitative": {
+                "name": "Tùy chỉnh (định tính)"
+              },
+              "customDiscrete": {
+                "name": "Tùy chỉnh (rời rạc)"
+              }
+            }
+          },
+          "scheme": {
+            "name": "Lược đồ"
+          },
+          "numberOfBins": {
+            "name": "Số thùng"
+          }
+        }
+      },
+      "min": {
+        "name": "Tối thiểu"
+      },
+      "displayRange": {
+        "name": "Phạm vi hiển thị",
+        "selectableDimensions": {
+          "max": {
+            "name": "Tối đa"
+          }
+        }
+      },
+      "bins": {
+        "name": "Thùng",
+        "selectableDimensions": {
+          "start": {
+            "name": "{{value1}} đến {{value2}}",
+            "selectableDimensions": {
+              "color": {
+                "name": "Màu sắc"
+              },
+              "start": {
+                "name": "Bắt đầu"
+              },
+              "stop": {
+                "name": "Dừng"
+              }
+            }
+          }
+        }
+      },
+      "colors": {
+        "name": "Màu sắc",
+        "selectableDimensions": {
+          "color": {
+            "name": "Màu sắc"
+          },
+          "value": {
+            "name": "Giá trị"
+          },
+          "remove": {
+            "value": "Xóa"
+          },
+          "add": {
+            "value": "Thêm màu"
+          }
+        }
+      },
+      "nullColor": {
+        "name": "Màu mặc định"
+      },
+      "outlierColor": {
+        "name": "Màu ngoại lai"
+      },
+      "additionalColors": {
+        "name": "Màu bổ sung",
+        "selectableDimensions": {
+          "regionColor": {
+            "name": "Màu khu vực"
+          },
+          "nullColor": {
+            "name": "Màu mặc định"
+          },
+          "outlierColor": {
+            "name": "Màu ngoại lai"
+          }
+        }
+      },
+      "pointSize": {
+        "name": "Kích thước điểm",
+        "selectableDimensions": {
+          "pointSizeColumn": {
+            "name": "Biến"
+          },
+          "pointSizeNull": {
+            "name": "Kích thước mặc định"
+          },
+          "pointSizesFactor": {
+            "name": "Hệ số kích thước"
+          },
+          "pointSizeOffset": {
+            "name": "Độ lệch kích thước"
+          }
+        }
+      },
+      "regionMapping": {
+        "name": "Ánh xạ khu vực"
+      },
+      "legend": {
+        "name": "Chú giải",
+        "selectableDimensions": {
+          "legendTitle": {
+            "name": "Tiêu đề"
+          },
+          "legendTicks": {
+            "name": "Đánh dấu"
+          },
+          "title": {
+            "name": "Tiêu đề mục {{index}}"
+          }
+        }
+      },
+      "styleOptions": {
+        "name": "Tùy chọn kiểu",
+        "selectableDimensions": {
+          "styleTitle": {
+            "name": "Tiêu đề"
+          },
+          "longitudeColumn": {
+            "name": "Cột kinh độ"
+          },
+          "latitudeColumn": {
+            "name": "Cột vĩ độ"
+          }
+        }
+      },
+      "timeOptions": {
+        "name": "Tùy chọn thời gian",
+        "selectableDimensions": {
+          "tableTimeColumn": {
+            "name": "Cột thời gian"
+          },
+          "tableEndTimeColumn": {
+            "name": "Cột thời gian kết thúc"
+          },
+          "tableTimeIdColumns": {
+            "name": "Cột ID"
+          },
+          "tableTimeIsSampled": {
+            "name": "Được lấy mẫu",
+            "options": {
+              "true": {
+                "name": "Có"
+              },
+              "false": {
+                "name": "Không"
+              }
+            }
+          },
+          "tableTimeDisplayDuration": {
+            "name": "Thời lượng hiển thị"
+          },
+          "tableTimeSpreadStartTime": {
+            "name": "Trải rộng thời gian bắt đầu",
+            "options": {
+              "true": {
+                "name": "Có"
+              },
+              "false": {
+                "name": "Không"
+              }
+            }
+          },
+          "tableTimeSpreadFinishTime": {
+            "name": "Trải rộng thời gian kết thúc",
+            "options": {
+              "true": {
+                "name": "Có"
+              },
+              "false": {
+                "name": "Không"
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
