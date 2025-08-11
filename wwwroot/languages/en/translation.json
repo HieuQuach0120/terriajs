@@ -299,6 +299,8 @@
     "sending": "Sending...",
     "send": "Send",
     "feedbackBtnText": "Give Feedback",
+    "routeBtnText": "Route",
+    "routeBtnTitle": "Fly to route",
     "minLength": "Minimum length of feedback comment is {{minLength}}"
   },
   "helpPanel": {

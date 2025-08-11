@@ -8,6 +8,10 @@ import {
   FeedbackButtonController,
   FEEDBACK_TOOL_ID
 } from "../../Feedback/FeedbackButtonController";
+import {
+  RouteButtonController,
+  ROUTE_TOOL_ID
+} from "../../Feedback/RouteButtonController";
 import PedestrianMode, {
   PEDESTRIAN_MODE_ID
 } from "../../Tools/PedestrianMode/PedestrianMode";
@@ -181,5 +185,39 @@ export const registerMapNavigations = (viewState: ViewState) => {
     screenSize: "medium",
     controller: feedbackController,
     order: 8
+  });
+
+  // Dữ liệu tuyến đường từ TerriaMap
+  const routeData = [
+    {
+      mPolygonLoop: {
+        curve: {
+          point: [
+            [105.85233936458508, 21.021829728218833, 0],
+            [105.85333936458508, 21.021829728218833, 0],
+            [105.85333936458508, 21.022829728218833, 0],
+            [105.85233936458508, 21.022829728218833, 0]
+          ]
+        }
+      },
+      color: [255, 0, 0, 255], // Red
+      propertySet: {
+        property: {
+          name: "Tuyến đường Hà Nội",
+          description: "Tuyến đường được vẽ từ TerriaMap"
+        }
+      }
+    }
+  ];
+
+  const routeController = new RouteButtonController(viewState, routeData);
+  mapNavigationModel.addItem({
+    id: ROUTE_TOOL_ID,
+    name: "translate#feedback.routeBtnText",
+    title: "translate#feedback.routeBtnTitle",
+    location: "BOTTOM",
+    screenSize: "medium",
+    controller: routeController,
+    order: 9
   });
 };
