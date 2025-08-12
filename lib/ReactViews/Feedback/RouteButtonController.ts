@@ -228,24 +228,10 @@ export class RouteButtonController extends MapNavigationItemController {
     pickedFeatures.allFeaturesAvailablePromise = Promise.resolve();
     console.log("pickedFeatures", pickedFeatures);
 
-    const terria = this.viewState.terria;
-
-    // Gắn tạm catalog item để vượt qua filter trong FeatureInfoPanel
-    (feature as any)._catalogItem =
-      terria.workbench.items[0] ?? terria.overlays.items[0] ?? undefined;
-
-    // Thiết lập vị trí pick (nếu có)
-    try {
-      pickedFeatures.pickPosition = entity.position?.getValue(JulianDate.now());
-    } catch {
-      /* ignore */
-    }
-
-    // Chọn feature này làm selectedFeature và công bố pickedFeatures
-    terria.selectedFeature = feature;
-    terria.pickedFeatures = pickedFeatures;
-
-    // Mở panel
+    // Set pickedFeatures để hiển thị FeatureInfoPanel
+    this.viewState.terria.pickedFeatures = pickedFeatures;
+    console.log("ahfiau");
+    // Hiển thị FeatureInfoPanel
     this.viewState.featureInfoPanelIsVisible = true;
     this.viewState.topElement = "FeatureInfo";
   }
