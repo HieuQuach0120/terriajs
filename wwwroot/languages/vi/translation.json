@@ -299,6 +299,8 @@
     "sending": "Đang gửi...",
     "send": "Gửi",
     "feedbackBtnText": "Gửi phản hồi",
+    "routeBtnText": "Tuyến đường",
+    "routeBtnTitle": "Bay đến tuyến đường",
     "minLength": "Độ dài tối thiểu của bình luận phản hồi là {{minLength}}"
   },
   "helpPanel": {
