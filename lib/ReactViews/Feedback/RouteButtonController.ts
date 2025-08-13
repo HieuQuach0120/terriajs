@@ -29,6 +29,22 @@ enum EntityPropertyTypes {
   SUBDISTRICT_WAY = "subdistrict-way"
 }
 
+const TableInfoNames = [
+  "elementType",
+  "elementId",
+  "cesium#estimatedHeight",
+  "cesium#longitude",
+  "cesium#latitude",
+  "building",
+  "name",
+  "name:en",
+  "addr:city",
+  "addr:country",
+  "addr:housenumber",
+  "addr:street",
+  "addr:subdistrict"
+];
+
 // Interface cho dữ liệu subdistrict
 export interface SubdistrictDataTypes {
   mPolygonLoop: {
@@ -71,38 +87,17 @@ export class RouteButtonController extends MapNavigationItemController {
   activate() {
     const cesium = this.viewState.terria.currentViewer;
     if (cesium && cesium.type === "Cesium") {
-      // const scene = (cesium as any).scene;
-      // if (scene && scene.camera) {
-      //   const camera = scene.camera;
-      //   const longitude = 105.85233936458508;
-      //   const latitude = 21.021829728218833;
-
-      //   // Bay đến vị trí
-      //   camera.flyTo({
-      //     destination: Cartesian3.fromDegrees(longitude, latitude, 10000),
-      //     duration: 3.0,
-      //     complete: () => {
-      //       console.log("Đã bay đến tuyến đường thành công");
-      //       // Vẽ entity sau khi bay đến
-
-      //     }
-      //   });
-
-      // }
       this.drawSubdistrictEntity();
     }
     super.activate();
   }
 
   async initialize(): Promise<void> {
-    console.log("initialize");
     const cesium = this.viewState.terria.currentViewer;
     const canvas = (cesium as any).scene.canvas;
     const inputHandler = new ScreenSpaceEventHandler(canvas);
     inputHandler.setInputAction((item: any) => {
-      console.log("item", item);
       const pickedFeature = (cesium as any).scene.pick(item.position);
-      console.log("pickedFeature", pickedFeature);
 
       if (!pickedFeature || !pickedFeature.id) return;
 
@@ -228,23 +223,44 @@ export class RouteButtonController extends MapNavigationItemController {
     pickedFeatures.allFeaturesAvailablePromise = Promise.resolve();
     console.log("pickedFeatures", pickedFeatures);
 
-    // Set pickedFeatures để hiển thị FeatureInfoPanel
-    this.viewState.terria.pickedFeatures = pickedFeatures;
-    console.log("ahfiau");
-    // Hiển thị FeatureInfoPanel
+    const terria = this.viewState.terria;
+
+    // Gắn tạm catalog item để vượt qua filter trong FeatureInfoPanel
+    (feature as any)._catalogItem =
+      terria.workbench.items[0] ?? terria.overlays.items[0] ?? undefined;
+
+    // Thiết lập vị trí pick (nếu có)
+    try {
+      pickedFeatures.pickPosition = entity.position?.getValue(JulianDate.now());
+    } catch {
+      /* ignore */
+    }
+
+    // Chọn feature này làm selectedFeature và công bố pickedFeatures
+    terria.selectedFeature = feature;
+    terria.pickedFeatures = pickedFeatures;
+
+    // Mở panel
     this.viewState.featureInfoPanelIsVisible = true;
     this.viewState.topElement = "FeatureInfo";
   }
 
-  private renderStrTable(property: any): string {
-    if (!property) return "";
+  private renderStrTable(tableData: string[]) {
+    const container = document.createElement("table");
+    container.className = "cesium-infoBox-defaultTable";
+    const tbody = document.createElement("tbody");
 
-    let html = "<table class='cesium-infoBox-defaultTable'>";
-    for (const [key, value] of Object.entries(property)) {
-      html += `<tr><th>${key}</th><td>${value}</td></tr>`;
-    }
-    html += "</table>";
-    return html;
+    const tr = document.createElement("tr");
+    const th = document.createElement("th");
+    const td = document.createElement("td");
+    th.innerText = tableData[0];
+    td.innerText = tableData[1];
+    tr.appendChild(th);
+    tr.appendChild(td);
+    tbody.appendChild(tr);
+
+    container.appendChild(tbody);
+    return container.outerHTML;
   }
 
   private isEntityInCurrentView(positions: Cartesian3[]): boolean {
