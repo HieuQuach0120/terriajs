@@ -80,7 +80,7 @@ export default class ViewState {
   @observable activeTabIdInCategory: string | undefined = undefined;
   @observable isDraggingDroppingFile: boolean = false;
   @observable mobileView: string | null = null;
-  @observable isMapFullScreen: boolean = false;
+  @observable isMapFullScreen: boolean = true;
   @observable myDataIsUploadView: boolean = true;
   @observable mobileMenuVisible: boolean = false;
   @observable explorerPanelAnimating: boolean = false;
@@ -505,9 +505,10 @@ export default class ViewState {
         }
 
         try {
-          const result = await this.terria.getModelByIdShareKeyOrCatalogIndex(
-            previewedItemId
-          );
+          const result =
+            await this.terria.getModelByIdShareKeyOrCatalogIndex(
+              previewedItemId
+            );
           result.throwIfError();
           const model = result.throwIfUndefined();
           this.viewCatalogMember(model);

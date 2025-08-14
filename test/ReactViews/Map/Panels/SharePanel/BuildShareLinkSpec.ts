@@ -330,7 +330,7 @@ describe("BuildShareLink", function () {
 
       terria.setBaseMaximumScreenSpaceError(1);
       terria.setUseNativeResolution(true);
-      setViewerMode("2d", terria.mainViewer);
+      // setViewerMode("2d", terria.mainViewer);
       terria.timelineStack.setAlwaysShowTimeline(true);
       await terria.mainViewer.setBaseMap(testBaseMap);
       terria.terrainSplitDirection = SplitDirection.LEFT;

@@ -13,6 +13,7 @@ import StoryButton from "./StoryButton/StoryButton";
 import HelpButton from "./HelpButton/HelpButton";
 
 import Styles from "./menu-bar.scss";
+import Workbench from "./Workbench/Workbench";
 
 const StyledMenuBar = styled.div`
   pointer-events: none;
@@ -66,11 +67,14 @@ const MenuBar = observer((props) => {
       <section className={classNames(Styles.flex)}>
         <ul className={classNames(Styles.menu)}>
           <li className={Styles.menuItem}>
-            <SettingPanel />
+            <Workbench viewState={viewState} />
           </li>
           <li className={Styles.menuItem}>
-            <HelpButton viewState={viewState} />
+            <SettingPanel />
           </li>
+          {/* <li className={Styles.menuItem}>
+            <HelpButton viewState={viewState} />
+          </li> */}
 
           {terria.configParameters?.languageConfiguration?.enabled ? (
             <li className={Styles.menuItem}>
@@ -81,7 +85,7 @@ const MenuBar = observer((props) => {
             </li>
           ) : null}
         </ul>
-        {storyEnabled && (
+        {/* {storyEnabled && (
           <ul className={classNames(Styles.menu)}>
             <li className={Styles.menuItem}>
               <StoryButton
@@ -91,8 +95,8 @@ const MenuBar = observer((props) => {
               />
             </li>
           </ul>
-        )}
-        <ul className={classNames(Styles.menu)}>
+        )} */}
+        {/* <ul className={classNames(Styles.menu)}>
           <li className={Styles.menuItem}>
             <SharePanel
               terria={terria}
@@ -100,7 +104,7 @@ const MenuBar = observer((props) => {
               animationDuration={props.animationDuration}
             />
           </li>
-        </ul>
+        </ul> */}
         {!viewState.useSmallScreenInterface &&
           menuItems.map((element, i) => (
             <li className={Styles.menuItem} key={i}>

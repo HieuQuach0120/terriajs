@@ -77,6 +77,7 @@
     "toggleSplitterToolDisabled": "Vui lòng tắt các tính năng so sánh song song khác để bật so sánh tiêu chuẩn",
     "title": "Kéo trái/phải để điều chỉnh chế độ xem",
     "workbench": {
+      "btnText": "Bảng công cụ",
       "goleftTitle": "Hiển thị bên trái",
       "goleft": "Trái",
       "bothTitle": "Hiển thị cả hai bên",

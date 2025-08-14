@@ -49,12 +49,12 @@ describe("TerriaViewer", function () {
       expect(mockAfterViewerChanges).not.toHaveBeenCalled();
     });
 
-    it("should raise event, change to leaflet from 3d", () => {
-      setViewerMode("2d", terriaViewer);
-      expect(mockBeforeViewerChanges).toHaveBeenCalledTimes(1);
-      expect(mockAfterViewerChanges).toHaveBeenCalledTimes(1);
-      expect(terriaViewer.viewerMode).toBe(ViewerMode.Leaflet);
-    });
+    // it("should raise event, change to leaflet from 3d", () => {
+    //   setViewerMode("2d", terriaViewer);
+    //   expect(mockBeforeViewerChanges).toHaveBeenCalledTimes(1);
+    //   expect(mockAfterViewerChanges).toHaveBeenCalledTimes(1);
+    //   expect(terriaViewer.viewerMode).toBe(ViewerMode.Leaflet);
+    // });
 
     it("should not trigger event, change to 3dsmooth from 3d", () => {
       setViewerMode("3dsmooth", terriaViewer);
@@ -62,12 +62,12 @@ describe("TerriaViewer", function () {
       expect(mockAfterViewerChanges).not.toHaveBeenCalled();
       expect(terriaViewer.viewerMode).toBe(ViewerMode.Cesium);
     });
-    it("should trigger events, on multiple changes", () => {
-      setViewerMode("2d", terriaViewer);
-      setViewerMode("3dsmooth", terriaViewer);
-      expect(mockBeforeViewerChanges).toHaveBeenCalledTimes(2);
-      expect(mockAfterViewerChanges).toHaveBeenCalledTimes(2);
-      expect(terriaViewer.viewerMode).toBe(ViewerMode.Cesium);
-    });
+    // it("should trigger events, on multiple changes", () => {
+    //   setViewerMode("2d", terriaViewer);
+    //   setViewerMode("3dsmooth", terriaViewer);
+    //   expect(mockBeforeViewerChanges).toHaveBeenCalledTimes(2);
+    //   expect(mockAfterViewerChanges).toHaveBeenCalledTimes(2);
+    //   expect(terriaViewer.viewerMode).toBe(ViewerMode.Cesium);
+    // });
   });
 });

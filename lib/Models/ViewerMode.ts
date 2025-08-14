@@ -18,13 +18,14 @@ export const MapViewers = Object.seal({
     terrain: false,
     label: "settingPanel.viewerModeLabels.CesiumEllipsoid",
     available: true
-  },
-  "2d": {
-    viewerMode: ViewerMode.Leaflet,
-    terrain: false,
-    label: "settingPanel.viewerModeLabels.Leaflet",
-    available: true
   }
+  // ,
+  // "2d": {
+  //   viewerMode: ViewerMode.Leaflet,
+  //   terrain: false,
+  //   label: "settingPanel.viewerModeLabels.Leaflet",
+  //   available: true
+  // }
 });
 
 export const isViewerMode = (mode: string): mode is keyof typeof MapViewers =>
