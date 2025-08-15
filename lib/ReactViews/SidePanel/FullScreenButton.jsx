@@ -54,66 +54,78 @@ class FullScreenButton extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div
-        className={classNames(Styles.fullScreen, {
-          [Styles.minifiedFullscreenBtnWrapper]: this.props.minified,
-          [Styles.trainerBarVisible]: this.props.viewState.trainerBarVisible,
-          [Styles.fullScreenWrapper]:
-            this.props.viewState.isMapFullScreen && !this.props.minified
-        })}
-      >
-        {this.props.minified && (
-          <label className={Styles.toggleWorkbench} htmlFor="toggle-workbench">
-            {this.props.btnText}
-          </label>
+      <>
+        {!this.props.viewState.isMapFullScreen && (
+          <div
+            className={classNames(Styles.fullScreen, {
+              [Styles.minifiedFullscreenBtnWrapper]: this.props.minified,
+              [Styles.trainerBarVisible]:
+                this.props.viewState.trainerBarVisible,
+              [Styles.fullScreenWrapper]:
+                this.props.viewState.isMapFullScreen && !this.props.minified
+            })}
+          >
+            {this.props.minified && (
+              <label
+                className={Styles.toggleWorkbench}
+                htmlFor="toggle-workbench"
+              >
+                {this.props.btnText}
+              </label>
+            )}
+            {this.props.viewState.isMapFullScreen && !this.props.minified && (
+              <Branding />
+            )}
+            <Button
+              id="toggle-workbench"
+              css={`
+                border-radius: 0 4px 4px 0;
+                ${this.props.viewState.isMapFullScreen === false
+                  ? `width: 16px;
+              padding: 0px;`
+                  : `width: 100%; border-radius: 0;`}
+              `}
+              primary
+              textProps={{
+                medium: true
+              }}
+              onClick={() => this.toggleFullScreen()}
+              aria-label={
+                this.props.viewState.isMapFullScreen
+                  ? t("sui.showWorkbench", {
+                      count: this.props.viewState.terria.workbench.items.length
+                    })
+                  : t("sui.hideWorkbench")
+              }
+              title={
+                this.props.viewState.isMapFullScreen
+                  ? t("sui.showWorkbench", {
+                      count: this.props.viewState.terria.workbench.items.length
+                    })
+                  : t("sui.hideWorkbench")
+              }
+              renderIcon={() =>
+                this.props.viewState.isMapFullScreen ? (
+                  <StyledIcon
+                    styledWidth="12px"
+                    light
+                    glyph={Icon.GLYPHS.right}
+                  />
+                ) : (
+                  <StyledIcon
+                    css="margin-right: 2px;"
+                    light
+                    styledWidth="12px"
+                    glyph={Icon.GLYPHS.left}
+                  />
+                )
+              }
+            >
+              {this.renderButtonText()}
+            </Button>
+          </div>
         )}
-        {this.props.viewState.isMapFullScreen && !this.props.minified && (
-          <Branding />
-        )}
-        <Button
-          id="toggle-workbench"
-          css={`
-            border-radius: 0 4px 4px 0;
-            ${this.props.viewState.isMapFullScreen === false
-              ? `width: 16px;
-            padding: 0px;`
-              : `width: 100%; border-radius: 0;`}
-          `}
-          primary
-          textProps={{
-            medium: true
-          }}
-          onClick={() => this.toggleFullScreen()}
-          aria-label={
-            this.props.viewState.isMapFullScreen
-              ? t("sui.showWorkbench", {
-                  count: this.props.viewState.terria.workbench.items.length
-                })
-              : t("sui.hideWorkbench")
-          }
-          title={
-            this.props.viewState.isMapFullScreen
-              ? t("sui.showWorkbench", {
-                  count: this.props.viewState.terria.workbench.items.length
-                })
-              : t("sui.hideWorkbench")
-          }
-          renderIcon={() =>
-            this.props.viewState.isMapFullScreen ? (
-              <StyledIcon styledWidth="12px" light glyph={Icon.GLYPHS.right} />
-            ) : (
-              <StyledIcon
-                css="margin-right: 2px;"
-                light
-                styledWidth="12px"
-                glyph={Icon.GLYPHS.left}
-              />
-            )
-          }
-        >
-          {this.renderButtonText()}
-        </Button>
-      </div>
+      </>
     );
   }
 }
