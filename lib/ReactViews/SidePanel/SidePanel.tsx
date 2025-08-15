@@ -182,7 +182,7 @@ const SidePanel = observer<React.FC<SidePanelProps>>(
             )}
           />
           <Spacing bottom={2} />
-          <Box justifySpaceBetween>
+          {/* <Box justifySpaceBetween>
             <SidePanelButton
               ref={refForExploreMapData}
               onClick={onAddDataClicked}
@@ -205,7 +205,7 @@ const SidePanel = observer<React.FC<SidePanelProps>>(
                 styledWidth={"20px"}
               />
             </SidePanelButton>
-          </Box>
+          </Box> */}
           <Spacing bottom={2} />
         </div>
         <Box

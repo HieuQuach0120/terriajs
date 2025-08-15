@@ -29,22 +29,6 @@ enum EntityPropertyTypes {
   SUBDISTRICT_WAY = "subdistrict-way"
 }
 
-const TableInfoNames = [
-  "elementType",
-  "elementId",
-  "cesium#estimatedHeight",
-  "cesium#longitude",
-  "cesium#latitude",
-  "building",
-  "name",
-  "name:en",
-  "addr:city",
-  "addr:country",
-  "addr:housenumber",
-  "addr:street",
-  "addr:subdistrict"
-];
-
 // Interface cho dữ liệu subdistrict
 export interface SubdistrictDataTypes {
   mPolygonLoop: {
@@ -115,7 +99,6 @@ export class RouteButtonController extends MapNavigationItemController {
         entity.properties?.getValue(JulianDate.now()).type ===
         EntityPropertyTypes.SUBDISTRICT_WAY
       ) {
-        console.log("Click vào entity của chúng ta:", entity);
         this.showFeatureInfo(entity);
       }
     }, ScreenSpaceEventType.LEFT_CLICK);
