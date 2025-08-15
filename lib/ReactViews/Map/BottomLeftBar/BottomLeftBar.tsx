@@ -54,45 +54,10 @@ const BottomLeftBar: FC = observer(() => {
       );
 
   return (
-    <Box padded>
-      {shouldShowPlayStoryButton(viewState) ? (
-        <Box paddedHorizontally={2}>
-          <MapIconButton
-            title={t("story.playStory")}
-            neverCollapse
-            iconElement={() => <Icon glyph={Icon.GLYPHS.playStory} />}
-            onClick={() => viewState.runStories()}
-            primary={!isNotificationActive}
-          >
-            {t("story.playStory")}
-          </MapIconButton>
-        </Box>
-      ) : null}
-      {/* Google Logo. Needed for Google Photorealistic 3D Tiles
-       */}
-      {isUsingGooglePhotorealistic3dTiles && (
-        <img
-          height="18px"
-          style={{ paddingLeft: "8px" }}
-          src="build/TerriaJS/images/google_on_non_white_hdpi.png"
-        />
-      )}
-      {/* On screen data attributions. At the moment, this supports only Cesium viewer.
-          Needed for Google Photorealistic 3D Tiles
-        */}
-      {!!screenDataAttributions?.length && (
-        <AttributionsContainer textLight mini>
-          {screenDataAttributions
-            .flatMap((attributionHtml, i) => [
-              <span key={attributionHtml}>
-                {parseCustomHtmlToReact(attributionHtml)}
-              </span>,
-              <span key={`delimiter-${i}`}> • </span>
-            ])
-            .slice(0, -1)}
-        </AttributionsContainer>
-      )}
-    </Box>
+    <></>
+    // <Box padded>
+
+    // </Box>
   );
 });
 
