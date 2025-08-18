@@ -32,9 +32,9 @@ describe("LangPanel", function () {
         languages: {
           en: "English",
           fr: "Français",
-          af: "Afrikaans"
+          vi: "Tiếng Việt"
         },
-        fallbackLanguage: "en"
+        fallbackLanguage: "vi"
       }
     });
     act(() => {

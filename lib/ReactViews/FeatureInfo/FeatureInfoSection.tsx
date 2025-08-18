@@ -38,6 +38,7 @@ import FeatureInfoDownload from "./FeatureInfoDownload";
 import FeatureInfoPanelButton from "./FeatureInfoPanelButton";
 import Styles from "./feature-info-section.scss";
 import { generateCesiumInfoHTMLFromProperties } from "./generateCesiumInfoHTMLFromProperties";
+import { generateFilteredInfoHTML } from "./generateFilteredInfoHTML";
 import getFeatureProperties from "./getFeatureProperties";
 import {
   MustacheFunction,
@@ -327,7 +328,7 @@ export class FeatureInfoSection extends Component<FeatureInfoProps> {
     if (isDefined(description)) return description;
 
     if (isDefined(feature.properties)) {
-      return generateCesiumInfoHTMLFromProperties(
+      return generateFilteredInfoHTML(
         feature.properties,
         currentTime,
         MappableMixin.isMixedInto(this.observableCatalogItem)
@@ -525,7 +526,7 @@ export class FeatureInfoSection extends Component<FeatureInfoProps> {
                 // Show templated feature info
                 this.templatedFeatureInfoReactNode
               )}
-              {
+              {/* {
                 // Show FeatureInfoDownload
                 !this.props.printView &&
                 showFeatureInfoDownload &&
@@ -536,7 +537,7 @@ export class FeatureInfoSection extends Component<FeatureInfoProps> {
                     name={this.downloadableData.fileName}
                   />
                 ) : null
-              }
+              } */}
             </div>
           </section>
         ) : null}

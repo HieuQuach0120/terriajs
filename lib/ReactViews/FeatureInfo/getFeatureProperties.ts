@@ -12,6 +12,23 @@ import { isTerriaFeatureData } from "../../Models/Feature/FeatureData";
 import { FeatureInfoFormat } from "../../Traits/TraitsClasses/FeatureInfoTraits";
 import { formatDateTime } from "./mustacheExpressions";
 
+// Danh sách các trường được phép hiển thị
+const ALLOWED_PROPERTIES = [
+  "elementType",
+  "elementId",
+  "cesium#estimatedHeight",
+  "cesium#longitude",
+  "cesium#latitude",
+  "building",
+  "name",
+  "name:en",
+  "addr:city",
+  "addr:country",
+  "addr:housenumber",
+  "addr:street",
+  "addr:subdistrict"
+];
+
 /**
  *
  * If they require .getValue, apply that.
@@ -37,6 +54,10 @@ export default function getFeatureProperties(
   if (formats) {
     applyFormatsInPlace(result, formats);
   }
+
+  // Lọc chỉ những properties được phép
+  result = filterAllowedProperties(result);
+
   return result;
 }
 
@@ -119,8 +140,8 @@ function applyFormatsInPlace(
           const number = isJsonNumber(value)
             ? value
             : isJsonString(value)
-            ? parseFloat(value)
-            : undefined;
+              ? parseFloat(value)
+              : undefined;
           // Note we default maximumFractionDigits to 20 (not 3).
           properties[key] = number?.toLocaleString(undefined, {
             maximumFractionDigits: 20,
@@ -153,6 +174,30 @@ function replaceBadKeyCharacters(properties: JsonObject) {
       result[cleanKey] = isJsonObject(value)
         ? replaceBadKeyCharacters(value)
         : value;
+    }
+  }
+  return result;
+}
+
+/**
+ * Lọc chỉ những properties được phép hiển thị
+ * @private
+ */
+function filterAllowedProperties(properties: JsonObject): JsonObject {
+  const result: JsonObject = {};
+  for (const key in properties) {
+    if (Object.prototype.hasOwnProperty.call(properties, key)) {
+      // Kiểm tra key gốc (trước khi replace bad characters) có trong danh sách cho phép không
+      const originalKey = key.replace(/_/g, "#").replace(/_/g, ".");
+      if (
+        ALLOWED_PROPERTIES.includes(key) ||
+        ALLOWED_PROPERTIES.includes(originalKey) ||
+        ALLOWED_PROPERTIES.some(
+          (allowedKey) => allowedKey.replace(/[.#]/g, "_") === key
+        )
+      ) {
+        result[key] = properties[key];
+      }
     }
   }
   return result;

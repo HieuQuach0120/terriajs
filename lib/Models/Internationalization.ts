@@ -53,9 +53,9 @@ const defaultLanguageConfiguration = {
     useSuspense: false
   },
   languages: {
-    en: "english"
+    en: "Tiếng Việt"
   },
-  fallbackLanguage: "en",
+  fallbackLanguage: "vi",
   changeLanguageOnStartWhen: [
     "querystring",
     "localStorage",
