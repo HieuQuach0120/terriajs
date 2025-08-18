@@ -12,15 +12,15 @@ export class HighlightEvent {
 
   setupMouseEvent() {
     // const cesium = this.viewState.terria.currentViewer;
-    this.cesium = this.viewState.terria.currentViewer;
-    const canvas = (this.cesium as any).scene.canvas;
-    this.inputHandler = new ScreenSpaceEventHandler(canvas);
-    this.inputHandler.screenSpaceEventHandler.setInputAction(
-      (movement: any) => {
-        this.onRightClickEvent(movement);
-      },
-      ScreenSpaceEventType.RIGHT_CLICK
-    );
+    // this.cesium = this.viewState.terria.currentViewer;
+    // const canvas = (this.cesium as any).scene.canvas;
+    // this.inputHandler = new ScreenSpaceEventHandler(canvas);
+    // this.inputHandler.screenSpaceEventHandler.setInputAction(
+    //   (movement: any) => {
+    //     this.onRightClickEvent(movement);
+    //   },
+    //   ScreenSpaceEventType.RIGHT_CLICK
+    // );
   }
 
   onRightClickEvent(movement: any) {
