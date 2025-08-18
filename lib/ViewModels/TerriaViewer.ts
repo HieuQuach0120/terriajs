@@ -21,6 +21,7 @@ import GlobeOrMap from "../Models/GlobeOrMap";
 import NoViewer from "../Models/NoViewer";
 import Terria from "../Models/Terria";
 import ViewerMode from "../Models/ViewerMode";
+import { EmitterEvents } from "../Event/Manager/emitter-events";
 
 // Async loading of Leaflet and Cesium
 
@@ -51,6 +52,7 @@ const viewerOptionsDefaults: ViewerOptions = {
  */
 export default class TerriaViewer {
   readonly terria: Terria;
+  private readonly _emitManager: EmitterEvents;
 
   @observable
   private _baseMap: MappableMixin.Instance | undefined;
@@ -134,6 +136,7 @@ export default class TerriaViewer {
         }
       );
     }
+    this._emitManager = new EmitterEvents();
   }
 
   get attached(): boolean {
@@ -241,6 +244,14 @@ export default class TerriaViewer {
 
   destroy(): void {
     this.detach();
+  }
+
+  dispatchEvent(eventName: string, data: any) {
+    this._emitManager.emit(eventName, data);
+  }
+
+  on(eventName: string, callback: (data: any) => void): void {
+    this._emitManager.addEventListener(eventName, callback);
   }
 
   private destroyCurrentViewer() {

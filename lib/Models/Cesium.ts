@@ -93,6 +93,7 @@ import GlobeOrMap from "./GlobeOrMap";
 import Terria from "./Terria";
 import UserDrawing from "./UserDrawing";
 import { setViewerMode } from "./ViewerMode";
+import { BackdropUi } from "../Core/UI/backdrop-ui";
 
 //import Cesium3DTilesInspector from "terriajs-cesium/Source/Widgets/Cesium3DTilesInspector/Cesium3DTilesInspector";
 
@@ -170,6 +171,7 @@ export default class Cesium extends GlobeOrMap {
   });
 
   private _terrainMessageViewed: boolean = false;
+  private readonly _backdropUi: BackdropUi;
   constructor(terriaViewer: TerriaViewer, container: string | HTMLElement) {
     super();
 
@@ -183,7 +185,8 @@ export default class Cesium extends GlobeOrMap {
     //     this.terria.configParameters.cesiumIonAccessToken;
     // }
 
-    Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlOTJlN2ZkNS00ZTlkLTQ1MjQtYjgzZS1jMmVhYmU1ODhiM2MiLCJpZCI6MzE2MTI1LCJpYXQiOjE3NTI4MDU5ODR9.H67fxIDcOcPiJBFWfa-zfN2aNuJl89Uyf1Ysv1IdNwk'
+    Ion.defaultAccessToken =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlOTJlN2ZkNS00ZTlkLTQ1MjQtYjgzZS1jMmVhYmU1ODhiM2MiLCJpZCI6MzE2MTI1LCJpYXQiOjE3NTI4MDU5ODR9.H67fxIDcOcPiJBFWfa-zfN2aNuJl89Uyf1Ysv1IdNwk";
     //An arbitrary base64 encoded image used to populate the placeholder SingleTileImageryProvider
     const img =
       "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA \
@@ -287,19 +290,41 @@ export default class Cesium extends GlobeOrMap {
           this.terria,
           e.endPosition
         );
+        this._backdropUi.hideWrapper();
       },
       ScreenSpaceEventType.MOUSE_MOVE,
       KeyboardEventModifier.SHIFT
     );
+
+    inputHandler.setInputAction((movement: any) => {
+      this.onRightClickEvent(movement);
+    }, ScreenSpaceEventType.RIGHT_CLICK);
 
     // Handle left click by picking objects from the map.
     inputHandler.setInputAction(
       (e: ScreenSpaceEventHandler.PositionedEvent) => {
         if (!this.isFeaturePickingPaused)
           this.pickFromScreenPosition(e.position, false);
+        this._backdropUi.hideWrapper();
       },
       ScreenSpaceEventType.LEFT_CLICK
     );
+
+    inputHandler.setInputAction(() => {
+      this._backdropUi.hideWrapper();
+    }, ScreenSpaceEventType.WHEEL);
+
+    inputHandler.setInputAction(() => {
+      this._backdropUi.hideWrapper();
+    }, ScreenSpaceEventType.MIDDLE_DOWN);
+
+    inputHandler.setInputAction(() => {
+      this._backdropUi.hideWrapper();
+    }, ScreenSpaceEventType.MIDDLE_UP);
+
+    inputHandler.setInputAction(() => {
+      this._backdropUi.hideWrapper();
+    }, ScreenSpaceEventType.MIDDLE_CLICK);
 
     let zoomUserDrawing: UserDrawing | undefined;
 
@@ -437,6 +462,7 @@ export default class Cesium extends GlobeOrMap {
       this.cesiumWidget.scene.globe.maximumScreenSpaceError =
         this.terria.baseMaximumScreenSpaceError;
     });
+    this._backdropUi = new BackdropUi(terriaViewer);
   }
 
   /** Add an event listener to a TerrainProvider.
@@ -1341,6 +1367,11 @@ export default class Cesium extends GlobeOrMap {
         this.terria.pickedFeatures = result;
       }
     });
+  }
+
+  async onRightClickEvent(movement: any) {
+    const pickedFeature = this.scene.pick(movement.position);
+    this._backdropUi.updateSettingWrapper(pickedFeature, movement.position);
   }
 
   pickFromLocation(

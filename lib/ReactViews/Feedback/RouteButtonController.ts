@@ -71,7 +71,6 @@ export class RouteButtonController extends MapNavigationItemController {
 
   @action.bound
   activate() {
-    console.log("Activating route tool");
     this._isActive = true;
 
     const cesium = this.viewState.terria.currentViewer;
@@ -83,7 +82,6 @@ export class RouteButtonController extends MapNavigationItemController {
 
   @action.bound
   deactivate() {
-    console.log("Deactivating route tool");
     this._isActive = false;
 
     // Clear the route data source
