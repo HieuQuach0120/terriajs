@@ -1,4 +1,4 @@
-import { action, makeObservable } from "mobx";
+import { action, makeObservable, observable } from "mobx";
 import { GLYPHS } from "../../Styled/Icon";
 import MapNavigationItemController from "../../ViewModels/MapNavigation/MapNavigationItemController";
 import ViewState from "../../ReactViewModels/ViewState";
@@ -21,8 +21,6 @@ import ScreenSpaceEventType from "terriajs-cesium/Source/Core/ScreenSpaceEventTy
 import TerriaFeature from "../../Models/Feature/Feature";
 import PickedFeatures from "../../Map/PickedFeatures/PickedFeatures";
 import JulianDate from "terriajs-cesium/Source/Core/JulianDate";
-// import { Intersect } from "terriajs-cesium";
-// import Cesium from "../../Models/Cesium";
 
 export const ROUTE_TOOL_ID = "route";
 enum EntityPropertyTypes {
@@ -45,6 +43,10 @@ export interface SubdistrictDataTypes {
 export class RouteButtonController extends MapNavigationItemController {
   private subdistrictData: SubdistrictDataTypes[] = [];
   private routeDataSource?: CustomDataSource;
+  private inputHandler?: ScreenSpaceEventHandler;
+
+  // Thêm observable state để theo dõi trạng thái active
+  @observable private _isActive: boolean = false;
 
   constructor(
     private viewState: ViewState,
@@ -69,6 +71,9 @@ export class RouteButtonController extends MapNavigationItemController {
 
   @action.bound
   activate() {
+    console.log("Activating route tool");
+    this._isActive = true;
+
     const cesium = this.viewState.terria.currentViewer;
     if (cesium && cesium.type === "Cesium") {
       this.drawSubdistrictEntity();
@@ -76,11 +81,45 @@ export class RouteButtonController extends MapNavigationItemController {
     super.activate();
   }
 
+  @action.bound
+  deactivate() {
+    console.log("Deactivating route tool");
+    this._isActive = false;
+
+    // Clear the route data source
+    if (this.routeDataSource) {
+      this.routeDataSource.entities.removeAll();
+      const cesium = this.viewState.terria.currentViewer;
+      if (cesium && cesium.type === "Cesium") {
+        const dataSources = (cesium as any).dataSources;
+        dataSources.remove(this.routeDataSource);
+        this.routeDataSource = undefined;
+      }
+    }
+
+    // Destroy input handler
+    if (this.inputHandler) {
+      this.inputHandler.destroy();
+      this.inputHandler = undefined;
+    }
+
+    // Hide feature info panel if it's showing
+    this.viewState.featureInfoPanelIsVisible = false;
+
+    super.deactivate();
+  }
+
   async initialize(): Promise<void> {
     const cesium = this.viewState.terria.currentViewer;
     const canvas = (cesium as any).scene.canvas;
-    const inputHandler = new ScreenSpaceEventHandler(canvas);
-    inputHandler.setInputAction((item: any) => {
+
+    // Destroy existing handler if any
+    if (this.inputHandler) {
+      this.inputHandler.destroy();
+    }
+
+    this.inputHandler = new ScreenSpaceEventHandler(canvas);
+    this.inputHandler.setInputAction((item: any) => {
       const pickedFeature = (cesium as any).scene.pick(item.position);
 
       if (!pickedFeature || !pickedFeature.id) return;
@@ -272,17 +311,13 @@ export class RouteButtonController extends MapNavigationItemController {
     return { longitude: longLat[0], latitude: longLat[1] };
   }
 
-  @action.bound
-  deactivate() {
-    super.deactivate();
-  }
-
   get visible() {
     return !this.viewState.hideMapUi && super.visible;
   }
 
+  // Thay đổi getter active để trả về trạng thái thực tế
   get active() {
-    return false;
+    return this._isActive;
   }
 
   // Method để set dữ liệu từ bên ngoài
