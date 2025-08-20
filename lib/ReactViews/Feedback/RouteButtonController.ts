@@ -48,15 +48,9 @@ export class RouteButtonController extends MapNavigationItemController {
   // Thêm observable state để theo dõi trạng thái active
   @observable private _isActive: boolean = false;
 
-  constructor(
-    private viewState: ViewState,
-    data?: SubdistrictDataTypes[]
-  ) {
+  constructor(private viewState: ViewState) {
     super();
     makeObservable(this);
-    if (data) {
-      this.subdistrictData = data;
-    }
     // Binding Event
     this.initialize = this.initialize.bind(this);
   }

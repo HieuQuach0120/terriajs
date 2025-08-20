@@ -304,6 +304,9 @@
     "routeBtnTitle": "Bay đến tuyến đường",
     "minLength": "Độ dài tối thiểu của bình luận phản hồi là {{minLength}}"
   },
+  "hideEntity": {
+    "hide": "Ẩn đổi tượng"
+  },
   "helpPanel": {
     "btnText": "Trợ giúp",
     "menuPaneTitle": "Chúng tôi ở đây để giúp",

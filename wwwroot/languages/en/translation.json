@@ -304,6 +304,9 @@
     "routeBtnTitle": "Fly to route",
     "minLength": "Minimum length of feedback comment is {{minLength}}"
   },
+  "hideEntity": {
+    "hide": "Hide entitys"
+  },
   "helpPanel": {
     "btnText": "Help",
     "menuPaneTitle": "We're here to help",

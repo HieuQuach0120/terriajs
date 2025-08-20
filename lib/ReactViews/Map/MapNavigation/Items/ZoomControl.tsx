@@ -168,10 +168,20 @@ class ZoomControlBase extends Component<PropTypes> {
 
   zoomReset() {
     this.props.terria.analytics?.logEvent(Category.view, ViewAction.reset);
+    if (this.props.terria.mainViewer.homeCamera?.direction) {
+      return this.flyTo(this.props.terria.mainViewer.homeCamera);
+    }
     this.props.terria.currentViewer.zoomTo(
       this.props.terria.mainViewer.homeCamera,
       1.5
     );
+  }
+
+  flyTo(data: any) {
+    if (!isDefined(this.props.terria.cesium)) return;
+    const scene = this.props.terria.cesium.scene;
+    const camera = scene.camera;
+    camera.setView(data);
   }
 
   render() {

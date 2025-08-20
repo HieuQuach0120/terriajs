@@ -30,6 +30,10 @@ import {
   ZoomControl,
   ZOOM_CONTROL_ID
 } from "./Items";
+import {
+  HideEntitysController,
+  HIDE_ENTITY_TOOL_ID
+} from "../../HideEntitys/HideEntityController";
 
 export const registerMapNavigations = (viewState: ViewState) => {
   const terria = viewState.terria;
@@ -187,30 +191,7 @@ export const registerMapNavigations = (viewState: ViewState) => {
   //   order: 8
   // });
 
-  // Dữ liệu tuyến đường từ TerriaMap
-  const routeData = [
-    {
-      mPolygonLoop: {
-        curve: {
-          point: [
-            [105.85233936458508, 21.021829728218833, 0],
-            [105.85333936458508, 21.021829728218833, 0],
-            [105.85333936458508, 21.022829728218833, 0],
-            [105.85233936458508, 21.022829728218833, 0]
-          ]
-        }
-      },
-      color: [255, 0, 0, 255], // Red
-      propertySet: {
-        property: {
-          name: "Tuyến đường Hà Nội",
-          description: "Tuyến đường được vẽ từ TerriaMap"
-        }
-      }
-    }
-  ];
-
-  const routeController = new RouteButtonController(viewState, routeData);
+  const routeController = new RouteButtonController(viewState);
   mapNavigationModel.addItem({
     id: ROUTE_TOOL_ID,
     name: "translate#feedback.routeBtnText",
@@ -218,6 +199,17 @@ export const registerMapNavigations = (viewState: ViewState) => {
     location: "BOTTOM",
     screenSize: "medium",
     controller: routeController,
+    order: 9
+  });
+
+  const hideControllerController = new HideEntitysController(viewState);
+  mapNavigationModel.addItem({
+    id: HIDE_ENTITY_TOOL_ID,
+    name: "translate#hideEntity.hide",
+    title: "translate#hideEntity.hide",
+    location: "BOTTOM",
+    screenSize: "medium",
+    controller: hideControllerController,
     order: 9
   });
 };
